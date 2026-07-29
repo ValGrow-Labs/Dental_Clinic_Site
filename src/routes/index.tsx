@@ -210,8 +210,7 @@ function Index() {
           playsInline
           preload="auto"
         />
-        <div className="absolute inset-0 z-10 bg-black/30" />
-        <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/20 via-transparent to-black/50" />
+        <div className="absolute inset-0 z-10 bg-black/35" />
 
         <div ref={heroTextRef} className="hero-fade absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-6">
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-white text-xs font-medium tracking-widest uppercase mb-6">
