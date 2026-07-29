@@ -82,6 +82,7 @@ function useReveal() {
 function Index() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeId, setActiveId] = useState<string>("home");
   const heroTextRef = useRef<HTMLDivElement>(null);
 
   useReveal();
@@ -99,6 +100,23 @@ function Index() {
     };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const ids = NAV_LINKS.map((l) => l.id);
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) setActiveId(e.target.id);
+        });
+      },
+      { rootMargin: "-45% 0px -50% 0px", threshold: 0 }
+    );
+    ids.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) io.observe(el);
+    });
+    return () => io.disconnect();
   }, []);
 
   const scrollTo = (id: string) => (e: React.MouseEvent) => {
@@ -132,11 +150,17 @@ function Index() {
                 key={l.id}
                 href={`#${l.id}`}
                 onClick={scrollTo(l.id)}
-                className={`text-sm font-medium transition-colors ${
+                className={`relative text-sm font-medium transition-colors ${
                   scrolled ? "text-slate-700 hover:text-[color:var(--color-brand)]" : "text-white/90 hover:text-white"
-                }`}
+                } ${activeId === l.id ? (scrolled ? "!text-[color:var(--color-brand)]" : "!text-white") : ""}`}
               >
                 {l.label}
+                {activeId === l.id && (
+                  <span
+                    className="absolute -bottom-1 left-0 right-0 h-0.5 rounded-full"
+                    style={{ background: scrolled ? "var(--color-brand)" : "rgba(255,255,255,0.9)" }}
+                  />
+                )}
               </a>
             ))}
           </nav>
