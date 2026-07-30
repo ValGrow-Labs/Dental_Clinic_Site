@@ -180,10 +180,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat with Bin Arab Dental Centre on WhatsApp"
-        className="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full flex items-center justify-center shadow-lg text-white transition hover:scale-110"
-        style={{ background: "#25D366" }}
+        className="whatsapp-premium text-white"
       >
-        <svg viewBox="0 0 32 32" className="w-7 h-7 fill-current">
+        <svg viewBox="0 0 32 32" className="w-[28px] h-[28px] md:w-[30px] md:h-[30px] fill-current">
           <path d="M19.11 17.28c-.28-.14-1.65-.81-1.9-.9-.26-.09-.44-.14-.63.14-.19.28-.72.9-.88 1.09-.16.19-.32.21-.6.07-.28-.14-1.18-.44-2.24-1.39-.83-.74-1.39-1.66-1.55-1.94-.16-.28-.02-.43.12-.57.13-.13.28-.32.42-.49.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.49-.07-.14-.63-1.51-.86-2.07-.23-.55-.46-.47-.63-.48-.16 0-.35-.01-.53-.01-.19 0-.49.07-.75.35-.26.28-.98.96-.98 2.33s1 2.71 1.14 2.89c.14.19 1.97 3.01 4.78 4.22.67.29 1.19.46 1.6.59.67.21 1.28.18 1.76.11.54-.08 1.65-.67 1.89-1.32.23-.65.23-1.2.16-1.32-.07-.12-.26-.19-.54-.33zM16.02 27C10.5 27 6 22.51 6 17c0-5.51 4.5-10 10.02-10s10.02 4.49 10.02 10c0 5.51-4.5 10-10.02 10zM16 5C9.37 5 4 10.37 4 17c0 2.11.56 4.09 1.54 5.8L4 28l5.34-1.4A11.94 11.94 0 0 0 16 29c6.63 0 12-5.37 12-12S22.63 5 16 5z" />
         </svg>
       </a>
