@@ -56,12 +56,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-10 h-20 flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: "linear-gradient(135deg,#0F6E8C,#39A9DB)" }}>
-              <span className="text-white font-bold font-heading">B</span>
-            </div>
-            <span className={`font-heading font-semibold text-lg tracking-tight transition-colors duration-500 ${scrolled ? "text-[color:var(--color-ink)]" : "text-white drop-shadow"}`}>
-              Bin Arab Dental
+          <Link to="/" className="flex items-center gap-3">
+            <img
+              src="/images/logo.png"
+              alt="Bin Arab Dental Centre"
+              className="w-[180px] md:w-[220px] h-10 md:h-12 object-contain"
+            />
+            <span className={`font-heading font-semibold text-base md:text-lg tracking-tight transition-colors duration-500 ${scrolled ? "text-[color:var(--color-ink)]" : "text-white drop-shadow"}`}>
+              Bin Arab Dental Centre
             </span>
           </Link>
 
@@ -136,10 +138,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <footer className="bg-[color:var(--color-ink)] text-white/80 pt-20 pb-10">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 grid md:grid-cols-4 gap-10">
           <div className="md:col-span-2">
-            <div className="flex items-center gap-2 mb-5">
-              <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: "linear-gradient(135deg,#0F6E8C,#39A9DB)" }}>
-                <span className="text-white font-bold font-heading">B</span>
-              </div>
+            <div className="flex items-center gap-3 mb-5">
+              <img
+                src="/images/logo.png"
+                alt="Bin Arab Dental Centre"
+                className="w-[180px] md:w-[220px] h-10 md:h-12 object-contain bg-white rounded-lg p-1.5"
+              />
               <span className="text-white font-heading font-semibold text-lg">Bin Arab Dental Centre</span>
             </div>
             <p className="text-white/60 leading-relaxed max-w-md text-sm">
