@@ -149,6 +149,16 @@ function Index() {
       <section id="about" className="py-24 lg:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-16 items-center">
           <div className="reveal">
+            <div className="rounded-3xl overflow-hidden shadow-2xl">
+              <img
+                src="https://binarabdentalcentre.com/assets/img/clinic/welcome.jpg"
+                alt="Bin Arab Dental Centre dental clinic in Dubai"
+                loading="lazy"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+          <div className="reveal">
             <p className="text-[color:var(--color-brand)] font-medium tracking-widest uppercase text-xs mb-4">About Bin Arab Dental Centre</p>
             <h2 className="text-3xl lg:text-5xl font-heading font-semibold leading-tight tracking-tight mb-6">
               A leading dental clinic in Dubai, founded by <span className="text-[color:var(--color-brand)]">Dr. Ibrahim Bin Arab</span>.
@@ -165,42 +175,6 @@ function Index() {
             <p className="text-slate-600 leading-relaxed">
               Whether you require services such as Root Canal Treatment, Re-treatments, Teeth Alignment, Teeth Whitening, Tooth Extraction, Wisdom Tooth Extraction, Implants, Veneers, or Gum treatments, our team is here to assist you.
             </p>
-          </div>
-          <div className="reveal">
-            <div className="grid grid-cols-2 gap-4 md:gap-6">
-              <div className="group rounded-2xl bg-white p-3 md:p-4 border border-slate-100 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 aspect-square flex items-center justify-center">
-                <img
-                  src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=600"
-                  alt="Specialist dentist performing treatment at Bin Arab Dental Centre"
-                  loading="lazy"
-                  className="w-full h-full object-cover rounded-xl"
-                />
-              </div>
-              <div className="group rounded-2xl bg-white p-3 md:p-4 border border-slate-100 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 aspect-square flex items-center justify-center">
-                <img
-                  src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&q=80&w=600"
-                  alt="Modern dental diagnostic consultation chair"
-                  loading="lazy"
-                  className="w-full h-full object-cover rounded-xl"
-                />
-              </div>
-              <div className="group rounded-2xl bg-white p-3 md:p-4 border border-slate-100 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 aspect-square flex items-center justify-center">
-                <img
-                  src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&q=80&w=600"
-                  alt="Advanced 3D digital intraoral scanner and monitoring technology"
-                  loading="lazy"
-                  className="w-full h-full object-cover rounded-xl"
-                />
-              </div>
-              <div className="group rounded-2xl bg-white p-3 md:p-4 border border-slate-100 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 aspect-square flex items-center justify-center">
-                <img
-                  src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=600"
-                  alt="Premium patient reception lounge and experience suite"
-                  loading="lazy"
-                  className="w-full h-full object-cover rounded-xl"
-                />
-              </div>
-            </div>
           </div>
         </div>
       </section>

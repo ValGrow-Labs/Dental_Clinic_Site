@@ -169,26 +169,54 @@ function About() {
               </li>
             </ul>
           </div>
-          <div className="grid grid-cols-2 gap-4">
-            <div className="bg-white p-6 rounded-2xl text-center shadow-sm">
-              <Award className="w-10 h-10 text-[color:var(--color-brand)] mx-auto mb-3" />
-              <h5 className="font-bold text-[color:var(--color-ink)] text-sm mb-1">DHA Certified</h5>
-              <p className="text-xs text-slate-500">Regulatory standards compliance</p>
+          <div className="grid grid-cols-2 gap-4 md:gap-6">
+            <div className="group rounded-[16px] bg-white p-3 md:p-4 border border-slate-100/80 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 aspect-square flex flex-col justify-between items-center text-center">
+              <div className="w-full flex-grow overflow-hidden rounded-xl bg-slate-50/50 flex items-center justify-center p-2 mb-3">
+                <img
+                  src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=400"
+                  alt="DHA Certified Bin Arab Dental Centre"
+                  loading="lazy"
+                  className="w-full h-full object-contain rounded-lg"
+                />
+              </div>
+              <h5 className="font-bold text-[color:var(--color-ink)] text-xs md:text-sm mb-0.5">DHA Certified</h5>
+              <p className="text-[10px] md:text-xs text-slate-500 line-clamp-1">Regulatory standards compliance</p>
             </div>
-            <div className="bg-white p-6 rounded-2xl text-center shadow-sm">
-              <Shield className="w-10 h-10 text-[color:var(--color-brand)] mx-auto mb-3" />
-              <h5 className="font-bold text-[color:var(--color-ink)] text-sm mb-1">100% Sterile</h5>
-              <p className="text-xs text-slate-500">Class-B autoclave sterilization</p>
+            <div className="group rounded-[16px] bg-white p-3 md:p-4 border border-slate-100/80 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 aspect-square flex flex-col justify-between items-center text-center">
+              <div className="w-full flex-grow overflow-hidden rounded-xl bg-slate-50/50 flex items-center justify-center p-2 mb-3">
+                <img
+                  src="https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&q=80&w=400"
+                  alt="100% Sterile dental equipment"
+                  loading="lazy"
+                  className="w-full h-full object-contain rounded-lg"
+                />
+              </div>
+              <h5 className="font-bold text-[color:var(--color-ink)] text-xs md:text-sm mb-0.5">100% Sterile</h5>
+              <p className="text-[10px] md:text-xs text-slate-500 line-clamp-1">Class-B autoclave sterilization</p>
             </div>
-            <div className="bg-white p-6 rounded-2xl text-center shadow-sm">
-              <Smile className="w-10 h-10 text-[color:var(--color-brand)] mx-auto mb-3" />
-              <h5 className="font-bold text-[color:var(--color-ink)] text-sm mb-1">10k+ Smiles</h5>
-              <p className="text-xs text-slate-500">Redesigned and restored</p>
+            <div className="group rounded-[16px] bg-white p-3 md:p-4 border border-slate-100/80 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 aspect-square flex flex-col justify-between items-center text-center">
+              <div className="w-full flex-grow overflow-hidden rounded-xl bg-slate-50/50 flex items-center justify-center p-2 mb-3">
+                <img
+                  src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&q=80&w=400"
+                  alt="10k+ dental smiles restored"
+                  loading="lazy"
+                  className="w-full h-full object-contain rounded-lg"
+                />
+              </div>
+              <h5 className="font-bold text-[color:var(--color-ink)] text-xs md:text-sm mb-0.5">10k+ Smiles</h5>
+              <p className="text-[10px] md:text-xs text-slate-500 line-clamp-1">Redesigned and restored</p>
             </div>
-            <div className="bg-white p-6 rounded-2xl text-center shadow-sm">
-              <Clock className="w-10 h-10 text-[color:var(--color-brand)] mx-auto mb-3" />
-              <h5 className="font-bold text-[color:var(--color-ink)] text-sm mb-1">Flexible Hours</h5>
-              <p className="text-xs text-slate-500">Open late until 9:00 PM</p>
+            <div className="group rounded-[16px] bg-white p-3 md:p-4 border border-slate-100/80 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 aspect-square flex flex-col justify-between items-center text-center">
+              <div className="w-full flex-grow overflow-hidden rounded-xl bg-slate-50/50 flex items-center justify-center p-2 mb-3">
+                <img
+                  src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=400"
+                  alt="Flexible appointment hours"
+                  loading="lazy"
+                  className="w-full h-full object-contain rounded-lg"
+                />
+              </div>
+              <h5 className="font-bold text-[color:var(--color-ink)] text-xs md:text-sm mb-0.5">Flexible Hours</h5>
+              <p className="text-[10px] md:text-xs text-slate-500 line-clamp-1">Open late until 9:00 PM</p>
             </div>
           </div>
         </div>
