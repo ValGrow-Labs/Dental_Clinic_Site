@@ -215,54 +215,25 @@
   will-change: opacity, transform;
 }
 
-/* Premium WhatsApp Floating Action Button */
-.whatsapp-premium {
+/* Official WhatsApp Floating Action Button */
+.whatsapp-official {
   position: fixed;
+  bottom: 24px;
+  right: 24px;
   z-index: 9999;
-  width: 60px;
-  height: 60px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   background-color: #25D366;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 10px 30px rgba(37,211,102,0.35);
-  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
-  animation: whatsapp-pulse 3.5s infinite ease-in-out;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease-in-out;
   cursor: pointer;
 }
 
-.whatsapp-premium:hover {
-  transform: translateY(-4px) scale(1.08);
-  box-shadow: 0 14px 35px rgba(37,211,102,0.55);
-}
-
-@keyframes whatsapp-pulse {
-  0%, 100% {
-    box-shadow: 0 10px 30px rgba(37,211,102,0.35);
-  }
-  50% {
-    box-shadow: 0 10px 30px rgba(37,211,102,0.35), 0 0 0 12px rgba(37, 211, 102, 0.25);
-  }
-}
-
-/* Spacing from edges dynamically */
-@media (max-width: 639px) {
-  .whatsapp-premium {
-    bottom: 20px;
-    right: 20px;
-  }
-}
-@media (min-width: 640px) and (max-width: 1023px) {
-  .whatsapp-premium {
-    bottom: 24px;
-    right: 24px;
-  }
-}
-@media (min-width: 1024px) {
-  .whatsapp-premium {
-    bottom: 32px;
-    right: 32px;
-  }
+.whatsapp-official:hover {
+  transform: scale(1.08);
 }
 
