@@ -43,7 +43,7 @@ function ContactPage() {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Booking Form */}
-          <div className="card-soft p-8 lg:p-12 border border-slate-100/60 bg-white">
+          <div id="appointment" className="card-soft p-8 lg:p-12 border border-slate-100/60 bg-white scroll-mt-24">
             <p className="text-[color:var(--color-brand)] font-medium tracking-widest uppercase text-xs mb-4">Book Appointment</p>
             <h2 className="text-3xl font-heading font-semibold tracking-tight text-[color:var(--color-ink)] mb-6">
               Where the Smile Begins

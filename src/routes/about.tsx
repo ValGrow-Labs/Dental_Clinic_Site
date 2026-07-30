@@ -204,7 +204,7 @@ function About() {
           <p className="text-white/90 leading-relaxed mb-8 max-w-2xl mx-auto">
             Book an appointment today with our specialist team of prosthodontists and general dentists in Al Safa 1, Wasl Road, Dubai.
           </p>
-          <Link to="/contact" className="inline-flex items-center gap-2 bg-white text-[color:var(--color-brand)] font-semibold px-8 py-4 rounded-full hover:bg-white/95 transition shadow-lg hover:shadow-xl">
+          <Link to="/contact" hash="appointment" className="inline-flex items-center gap-2 bg-white text-[color:var(--color-brand)] font-semibold px-8 py-4 rounded-full hover:bg-white/95 transition shadow-lg hover:shadow-xl">
             Book Consultation <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

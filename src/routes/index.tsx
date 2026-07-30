@@ -131,9 +131,9 @@ function Index() {
             Experience the allure of advanced, state-of-the-art dental solutions for you and your loved ones at our prestigious dental clinic in Dubai.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row items-center gap-3">
-            <a href="#appointment" onClick={scrollTo("appointment")} className="btn-primary">
+            <Link to="/contact" hash="appointment" className="btn-primary">
               Book Appointment <ArrowRight className="w-4 h-4" />
-            </a>
+            </Link>
             <a href="#services" onClick={scrollTo("services")} className="btn-ghost">
               Explore Services
             </a>
@@ -211,9 +211,9 @@ function Index() {
             ))}
           </div>
           <div className="text-center mt-14 reveal">
-            <a href="#appointment" onClick={scrollTo("appointment")} className="btn-primary">
+            <Link to="/contact" hash="appointment" className="btn-primary">
               Book Appointment <ChevronRight className="w-4 h-4" />
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -253,9 +253,9 @@ function Index() {
                 <p className="text-white/85 leading-relaxed mb-6">
                   We pursue excellence using the latest, cutting-edge solutions, ensuring that every patient receives the radiant smile they rightfully deserve.
                 </p>
-                <a href="#appointment" onClick={scrollTo("appointment")} className="inline-flex items-center gap-2 bg-white text-[color:var(--color-brand)] font-semibold px-6 py-3 rounded-full hover:bg-white/95 transition">
+                <Link to="/contact" hash="appointment" className="inline-flex items-center gap-2 bg-white text-[color:var(--color-brand)] font-semibold px-6 py-3 rounded-full hover:bg-white/95 transition">
                   Book Consultation <ArrowRight className="w-4 h-4" />
-                </a>
+                </Link>
               </div>
               <div className="rounded-2xl overflow-hidden">
                 <img

@@ -131,7 +131,7 @@ function InsurancePage() {
                 Itemized invoice and transaction receipts
               </li>
             </ul>
-            <Link to="/contact" className="btn-primary text-xs w-full text-center">
+            <Link to="/contact" hash="appointment" className="btn-primary text-xs w-full text-center">
               Request Reimbursement Form
             </Link>
           </div>
@@ -225,7 +225,7 @@ function InsurancePage() {
           <p className="text-white/90 leading-relaxed mb-8 max-w-2xl mx-auto">
             Send us your card details via email or schedule an appointment. Our insurance coordinators will check your exact eligibility specs instantly.
           </p>
-          <Link to="/contact" className="inline-flex items-center gap-2 bg-white text-[color:var(--color-brand)] font-semibold px-8 py-4 rounded-full hover:bg-white/95 transition shadow-lg hover:shadow-xl">
+          <Link to="/contact" hash="appointment" className="inline-flex items-center gap-2 bg-white text-[color:var(--color-brand)] font-semibold px-8 py-4 rounded-full hover:bg-white/95 transition shadow-lg hover:shadow-xl">
             Inquire Now <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

@@ -24,10 +24,28 @@ export function Layout({ children }: { children: React.ReactNode }) {
       setScrolled(window.scrollY > 40);
     };
     window.addEventListener("scroll", onScroll, { passive: true });
-    // Reset scroll position on page change
-    window.scrollTo({ top: 0, behavior: "instant" as any });
+    
+    // Check if there is a hash in the path
+    const hash = window.location.hash;
+    if (hash) {
+      const id = hash.replace("#", "");
+      const element = document.getElementById(id);
+      if (element) {
+        // Let component mount first before scrolling
+        const timer = setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 100);
+        return () => {
+          clearTimeout(timer);
+          window.removeEventListener("scroll", onScroll);
+        };
+      }
+    } else {
+      window.scrollTo({ top: 0, behavior: "instant" as any });
+    }
+    
     return () => window.removeEventListener("scroll", onScroll);
-  }, [activePath]);
+  }, [activePath, location.hash]);
 
   return (
     <div className="min-h-screen bg-white text-[color:var(--color-ink)] flex flex-col">
@@ -74,7 +92,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
             <a href="tel:+97143202008" className={`text-sm font-medium flex items-center gap-2 transition-colors duration-500 ${scrolled ? "text-slate-700" : "text-white/90"}`}>
               <Phone className="w-4 h-4" /> +971 4 320 2008
             </a>
-            <Link to="/contact" className="btn-primary text-sm !py-2.5 !px-5">
+            <Link to="/contact" hash="appointment" className="btn-primary text-sm !py-2.5 !px-5">
               Book Appointment
             </Link>
           </div>
@@ -101,7 +119,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                   {l.label}
                 </Link>
               ))}
-              <Link to="/contact" onClick={() => setMenuOpen(false)} className="btn-primary text-sm mt-2">
+              <Link to="/contact" hash="appointment" onClick={() => setMenuOpen(false)} className="btn-primary text-sm mt-2">
                 Book Appointment
               </Link>
             </div>
