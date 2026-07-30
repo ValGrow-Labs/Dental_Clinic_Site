@@ -1,6 +1,7 @@
 import { Link, useLocation } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Phone, Mail, Clock, Menu, X, ChevronRight } from "lucide-react";
+import { Logo } from "./Logo";
 
 const NAV_LINKS = [
   { label: "Home", path: "/" },
@@ -56,15 +57,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-10 h-20 flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-3">
-            <img
-              src="/images/logo.png"
-              alt="Bin Arab Dental Centre"
-              className="w-[180px] md:w-[220px] h-10 md:h-12 object-contain"
-            />
-            <span className={`font-heading font-semibold text-base md:text-lg tracking-tight transition-colors duration-500 ${scrolled ? "text-[color:var(--color-ink)]" : "text-white drop-shadow"}`}>
-              Bin Arab Dental Centre
-            </span>
+          <Link to="/" className="flex items-center">
+            <Logo scrolled={scrolled} />
           </Link>
 
           <nav className="hidden lg:flex items-center gap-8">
@@ -138,13 +132,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <footer className="bg-[color:var(--color-ink)] text-white/80 pt-20 pb-10">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 grid md:grid-cols-4 gap-10">
           <div className="md:col-span-2">
-            <div className="flex items-center gap-3 mb-5">
-              <img
-                src="/images/logo.png"
-                alt="Bin Arab Dental Centre"
-                className="w-[180px] md:w-[220px] h-10 md:h-12 object-contain bg-white rounded-lg p-1.5"
-              />
-              <span className="text-white font-heading font-semibold text-lg">Bin Arab Dental Centre</span>
+            <div className="mb-5">
+              <Logo isFooter={true} />
             </div>
             <p className="text-white/60 leading-relaxed max-w-md text-sm">
               A leading dental clinic in Dubai committed to excellence in dentistry — combining advanced technology with an experienced Emirati and Turkish specialist team.
