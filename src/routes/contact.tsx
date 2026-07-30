@@ -176,7 +176,7 @@ function ContactPage() {
               Find Our Clinic in Dubai
             </h2>
           </div>
-          <div className="rounded-3xl overflow-hidden shadow-md bg-white border border-slate-100 p-2">
+          <div className="rounded-3xl overflow-hidden shadow-md bg-white border border-slate-100 p-2 relative group">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.82682977462!2d55.2323381!3d25.1787163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6a27e7d7a5b3%3A0xe5a3637e1a3cc8be!2sBin%20Arab%20Dental%20Centre!5e0!3m2!1sen!2sae!4v1700000000000!5m2!1sen!2sae"
               width="100%"
@@ -187,6 +187,18 @@ function ContactPage() {
               referrerPolicy="no-referrer-when-downgrade"
               title="Google Map showing Bin Arab Dental Centre location in Al Safa 1, Dubai"
             />
+            {/* Clickable Overlay to open the official listing */}
+            <a
+              href="https://www.google.com/maps/place/Bin+Arab+Dental+Centre/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="absolute inset-2 rounded-[20px] bg-black/0 hover:bg-black/5 transition-colors duration-300 z-10 flex items-center justify-center cursor-pointer"
+              aria-label="Open Bin Arab Dental Centre in Google Maps"
+            >
+              <span className="bg-white/95 text-slate-800 text-xs font-semibold px-4 py-2.5 rounded-full shadow-lg border border-slate-200 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center gap-2">
+                Open in Google Maps
+              </span>
+            </a>
           </div>
         </div>
       </section>
