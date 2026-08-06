@@ -86,7 +86,7 @@ function InsurancePage() {
             </p>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+                <CheckCircle className="w-5 h-5 text-[color:var(--color-brand)] shrink-0 mt-0.5" />
                 <div>
                   <h5 className="font-bold text-[color:var(--color-ink)] text-sm">Covered (Typically)</h5>
                   <p className="text-xs text-slate-500">Preventative checkups, scaling/cleaning, digital X-rays, root canals, simple extractions, composite fillings.</p>

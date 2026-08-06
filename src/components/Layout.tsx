@@ -1,17 +1,37 @@
 import { Link, useLocation } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Phone, Mail, Clock, Menu, X, ChevronRight } from "lucide-react";
+import { Menu, X, ChevronRight, Facebook, Instagram, ChevronDown } from "lucide-react";
 import { Logo } from "./Logo";
 
-const NAV_LINKS = [
+const HEADER_LINKS = [
+  { label: "Home", path: "/" },
+  { label: "About", path: "/about" },
+  { label: "Services", path: "/services", hasDropdown: true },
+  { label: "Our Team", path: "/team" },
+  { label: "Gallery", path: "/gallery" },
+  { label: "Offers", path: "/offers" },
+];
+
+const FOOTER_LINKS = [
   { label: "Home", path: "/" },
   { label: "About", path: "/about" },
   { label: "Services", path: "/services" },
-  { label: "Treatments", path: "/treatments" },
   { label: "Team", path: "/team" },
   { label: "Gallery", path: "/gallery" },
-  { label: "Insurance", path: "/insurance" },
   { label: "Contact", path: "/contact" },
+];
+
+const SERVICES_LIST = [
+  { name: "Dental Implant" },
+  { name: "Cosmetic Denture" },
+  { name: "Dental Emergency" },
+  { name: "Invisalign" },
+  { name: "Child Oral Care" },
+  { name: "Dental Check Up" },
+  { name: "Aesthetic Dentistry" },
+  { name: "Endodontics" },
+  { name: "Teeth Whitening" },
+  { name: "Tooth Extraction" },
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
@@ -52,49 +72,71 @@ export function Layout({ children }: { children: React.ReactNode }) {
     <div className="min-h-screen bg-white text-[color:var(--color-ink)] flex flex-col">
       {/* NAV */}
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled ? "glass-nav" : "glass-nav-transparent"
-        }`}
+        className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white border-b border-slate-100 shadow-sm"
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 h-20 flex items-center justify-between">
-          <Link to="/" className="flex items-center">
+        <div className="max-w-7xl mx-auto px-10 lg:px-[50px] h-[85px] flex items-center justify-between w-full">
+          <Link to="/" className="flex items-center shrink-0 z-10">
             <Logo scrolled={scrolled} />
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-8">
-            {NAV_LINKS.map((l) => {
+          {/* Centered Desktop Nav */}
+          <nav className="hidden lg:flex items-center justify-center gap-7 lg:gap-[32px] flex-1 z-10">
+            {HEADER_LINKS.map((l) => {
               const isActive = activePath === l.path;
+              if (l.hasDropdown) {
+                return (
+                  <div key={l.path} className="relative group py-2">
+                    <Link
+                      to={l.path}
+                      className={`relative text-[17px] font-medium transition-colors flex items-center gap-1 text-slate-700 hover:text-[color:var(--color-brand)] ${isActive ? "!text-[color:var(--color-brand)]" : ""}`}
+                    >
+                      {l.label}
+                      <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
+                      {isActive && (
+                        <span className="absolute -bottom-1 left-0 right-0 h-0.5 rounded-full bg-[color:var(--color-brand)]" />
+                      )}
+                    </Link>
+                    
+                    {/* Services Hover Dropdown Menu */}
+                    <div className="absolute top-full left-0 mt-1 w-56 rounded-xl bg-white shadow-xl border border-slate-100 py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 transform origin-top-left scale-95 group-hover:scale-100 animate-in fade-in slide-in-from-top-2 duration-150">
+                      {SERVICES_LIST.map((service) => (
+                        <Link
+                          key={service.name}
+                          to="/services"
+                          hash={`detail-${service.name.toLowerCase().replace(/\s+/g, "-")}`}
+                          className="block px-4 py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-[color:var(--color-brand)] transition-colors"
+                        >
+                          {service.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                );
+              }
               return (
                 <Link
                   key={l.path}
                   to={l.path}
-                  className={`relative text-sm font-medium transition-colors ${
-                    scrolled ? "text-slate-700 hover:text-[color:var(--color-brand)]" : "text-white/90 hover:text-white"
-                  } ${isActive ? (scrolled ? "!text-[color:var(--color-brand)]" : "!text-white") : ""}`}
+                  className={`relative text-[17px] font-medium transition-colors text-slate-700 hover:text-[color:var(--color-brand)] ${isActive ? "!text-[color:var(--color-brand)]" : ""}`}
                 >
                   {l.label}
                   {isActive && (
-                    <span
-                      className="absolute -bottom-1 left-0 right-0 h-0.5 rounded-full"
-                      style={{ background: scrolled ? "var(--color-brand)" : "rgba(255,255,255,0.9)" }}
-                    />
+                    <span className="absolute -bottom-1 left-0 right-0 h-0.5 rounded-full bg-[color:var(--color-brand)]" />
                   )}
                 </Link>
               );
             })}
           </nav>
 
-          <div className="hidden lg:flex items-center gap-3">
-            <a href="tel:+97143202008" className={`text-sm font-medium flex items-center gap-2 transition-colors duration-500 ${scrolled ? "text-slate-700" : "text-white/90"}`}>
-              <Phone className="w-4 h-4" /> +971 4 320 2008
-            </a>
-            <Link to="/contact" hash="appointment" className="btn-primary text-sm !py-2.5 !px-5">
-              Book Appointment
+          {/* Green Book Now Button on desktop */}
+          <div className="hidden lg:flex items-center shrink-0 z-10">
+            <Link to="/contact" hash="appointment" className="bg-[#2EAED6] hover:bg-[#249CC0] text-white font-semibold py-2.5 px-6 rounded-full transition shadow-[0_8px_20px_rgba(46,174,214,0.25)] hover:shadow-[0_8px_20px_rgba(46,174,214,0.4)] text-sm whitespace-nowrap">
+              Book Now
             </Link>
           </div>
 
           <button
-            className={`lg:hidden transition-colors duration-500 ${scrolled ? "text-slate-800" : "text-white"}`}
+            className="lg:hidden text-slate-800"
             onClick={() => setMenuOpen((v) => !v)}
             aria-label="Toggle menu"
           >
@@ -103,9 +145,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
         </div>
 
         {menuOpen && (
-          <div className="lg:hidden glass-nav border-t border-slate-100">
+          <div className="lg:hidden bg-white border-t border-slate-100 shadow-lg">
             <div className="px-6 py-4 flex flex-col gap-3">
-              {NAV_LINKS.map((l) => (
+              {HEADER_LINKS.map((l) => (
                 <Link
                   key={l.path}
                   to={l.path}
@@ -115,8 +157,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
                   {l.label}
                 </Link>
               ))}
-              <Link to="/contact" hash="appointment" onClick={() => setMenuOpen(false)} className="btn-primary text-sm mt-2">
-                Book Appointment
+              <Link to="/contact" hash="appointment" onClick={() => setMenuOpen(false)} className="bg-[#2EAED6] hover:bg-[#249CC0] text-white text-center font-semibold py-2.5 rounded-full transition mt-2 shadow-[0_8px_20px_rgba(46,174,214,0.25)] hover:shadow-[0_8px_20px_rgba(46,174,214,0.4)]">
+                Book Now
               </Link>
             </div>
           </div>
@@ -130,10 +172,15 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
       {/* FOOTER */}
       <footer className="bg-[color:var(--color-ink)] text-white/80 pt-20 pb-10">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 grid md:grid-cols-4 gap-10">
-          <div className="md:col-span-2">
-            <div className="mb-5">
-              <Logo isFooter={true} />
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 lg:gap-16">
+          <div>
+            <div className="flex items-center gap-3 mb-5">
+              <img
+                src="/images/logo.png"
+                alt="Bin Arab Dental Centre"
+                className="w-[180px] md:w-[220px] h-10 md:h-12 object-contain bg-white rounded-lg p-1.5"
+              />
+              <span className="text-white font-heading font-semibold text-lg">Bin Arab Dental Centre</span>
             </div>
             <p className="text-white/60 leading-relaxed max-w-md text-sm">
               A leading dental clinic in Dubai committed to excellence in dentistry — combining advanced technology with an experienced Emirati and Turkish specialist team.
@@ -142,7 +189,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           <div>
             <h4 className="font-heading font-semibold text-white mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm">
-              {NAV_LINKS.map((l) => (
+              {FOOTER_LINKS.map((l) => (
                 <li key={l.path}>
                   <Link to={l.path} className="text-white/70 hover:text-white transition">
                     {l.label}
@@ -150,15 +197,64 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 </li>
               ))}
             </ul>
+            
+            {/* Embedded Footer Google Map */}
+            <div className="mt-6 w-full max-w-[340px] h-[220px] rounded-xl overflow-hidden shadow-md border border-white/10 bg-white/5">
+              <iframe
+                src="https://maps.google.com/maps?q=25.178887,55.234786&hl=en&z=16&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={true}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Bin Arab Dental Centre Footer Map"
+              />
+            </div>
           </div>
           <div>
             <h4 className="font-heading font-semibold text-white mb-4">Contact</h4>
-            <ul className="space-y-2 text-sm text-white/70">
-              <li>Al Ferdous 4, Office 109, Al Wasl road, Al Safa 1, Dubai</li>
-              <li><a href="tel:+97143202008" className="hover:text-white">+971 4 320 2008</a></li>
-              <li><a href="tel:+971544432808" className="hover:text-white">+971 54 4432808</a></li>
-              <li><a href="mailto:info@benarab.com" className="hover:text-white">info@benarab.com</a></li>
+            <ul className="space-y-2.5 text-sm text-white/70">
+              <li className="font-semibold text-white text-base">Bin Arab Dental Centre</li>
+              <li>Office 109, Al Ferdous 4</li>
+              <li>Al Wasl Road, Al Safa 1, Dubai</li>
+              <li><a href="tel:+97143202008" className="hover:text-white transition">+971 4 320 2008</a></li>
+              <li><a href="tel:+971544432808" className="hover:text-white transition">+971 54 4432808</a></li>
+              <li><a href="mailto:info@benarab.com" className="hover:text-white transition">info@benarab.com</a></li>
             </ul>
+            
+            {/* Social Media Links */}
+            <div className="flex gap-4 mt-6">
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-white hover:border-white transition-all duration-300"
+                aria-label="Facebook"
+              >
+                <Facebook className="w-5 h-5" />
+              </a>
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-white hover:border-white transition-all duration-300"
+                aria-label="Instagram"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a
+                href="https://wa.me/971544432808"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-white hover:border-white transition-all duration-300"
+                aria-label="WhatsApp"
+              >
+                <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
+                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.97-1.861-1.868-4.339-2.897-6.97-2.899-5.437 0-9.862 4.37-9.866 9.8-.001 1.762.463 3.483 1.343 5.012l-.995 3.634 3.737-.978zm11.233-6.84c-.11-.18-.405-.29-.85-.515-.445-.225-2.633-1.302-3.033-1.448-.4-.147-.693-.22-.99.225-.296.45-1.15 1.448-1.408 1.74-.257.29-.515.327-.96.1-.445-.225-1.884-.695-3.587-2.216-1.325-1.183-2.218-2.645-2.478-3.095-.26-.45-.028-.693.197-.917.202-.202.445-.515.668-.773.225-.258.3-.445.45-.744.15-.3.075-.56-.037-.785-.11-.225-.99-2.39-1.358-3.284-.36-.874-.724-.755-.99-.768-.256-.013-.55-.015-.844-.015-.294 0-.773.11-1.177.55-.404.44-1.54 1.51-1.54 3.682s1.586 4.264 1.81 4.563c.224.3 3.12 4.767 7.558 6.685 1.056.457 1.88.73 2.525.935 1.062.338 2.03.29 2.793.176.852-.127 2.634-.11 3.034-1.448.4-1.302.4-2.422.28-2.645-.12-.224-.412-.33-.858-.556z" />
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
         <div className="max-w-7xl mx-auto px-6 lg:px-10 mt-14 pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-white/50">

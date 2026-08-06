@@ -14,6 +14,7 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as InsuranceRouteImport } from './routes/insurance'
+import { Route as OffersRouteImport } from './routes/offers'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as TeamRouteImport } from './routes/team'
 import { Route as TreatmentsRouteImport } from './routes/treatments'
@@ -43,6 +44,11 @@ const InsuranceRoute = InsuranceRouteImport.update({
   path: '/insurance',
   getParentRoute: () => rootRouteImport,
 } as any)
+const OffersRoute = OffersRouteImport.update({
+  id: '/offers',
+  path: '/offers',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
@@ -65,6 +71,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
   '/insurance': typeof InsuranceRoute
+  '/offers': typeof OffersRoute
   '/services': typeof ServicesRoute
   '/team': typeof TeamRoute
   '/treatments': typeof TreatmentsRoute
@@ -75,6 +82,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
   '/insurance': typeof InsuranceRoute
+  '/offers': typeof OffersRoute
   '/services': typeof ServicesRoute
   '/team': typeof TeamRoute
   '/treatments': typeof TreatmentsRoute
@@ -86,6 +94,7 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
   '/insurance': typeof InsuranceRoute
+  '/offers': typeof OffersRoute
   '/services': typeof ServicesRoute
   '/team': typeof TeamRoute
   '/treatments': typeof TreatmentsRoute
@@ -98,6 +107,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/gallery'
     | '/insurance'
+    | '/offers'
     | '/services'
     | '/team'
     | '/treatments'
@@ -108,6 +118,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/gallery'
     | '/insurance'
+    | '/offers'
     | '/services'
     | '/team'
     | '/treatments'
@@ -118,6 +129,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/gallery'
     | '/insurance'
+    | '/offers'
     | '/services'
     | '/team'
     | '/treatments'
@@ -129,6 +141,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   GalleryRoute: typeof GalleryRoute
   InsuranceRoute: typeof InsuranceRoute
+  OffersRoute: typeof OffersRoute
   ServicesRoute: typeof ServicesRoute
   TeamRoute: typeof TeamRoute
   TreatmentsRoute: typeof TreatmentsRoute
@@ -171,6 +184,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof InsuranceRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/offers': {
+      id: '/offers'
+      path: '/offers'
+      fullPath: '/offers'
+      preLoaderRoute: typeof OffersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services': {
       id: '/services'
       path: '/services'
@@ -201,6 +221,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   GalleryRoute: GalleryRoute,
   InsuranceRoute: InsuranceRoute,
+  OffersRoute: OffersRoute,
   ServicesRoute: ServicesRoute,
   TeamRoute: TeamRoute,
   TreatmentsRoute: TreatmentsRoute,

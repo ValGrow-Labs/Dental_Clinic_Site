@@ -107,6 +107,33 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              // Unregister all service workers on localhost to prevent stale cache interception from previous apps
+              if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.getRegistrations().then(registrations => {
+                  for (const registration of registrations) {
+                    registration.unregister().then(unregistered => {
+                      if (unregistered) {
+                        console.log('Successfully unregistered service worker:', registration);
+                        window.location.reload();
+                      }
+                    });
+                  }
+                });
+              }
+              // Clear cache storage
+              if ('caches' in window) {
+                caches.keys().then(names => {
+                  for (const name of names) {
+                    caches.delete(name);
+                  }
+                });
+              }
+            `,
+          }}
+        />
       </head>
       <body>
         {children}
