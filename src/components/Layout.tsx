@@ -128,8 +128,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
             })}
           </nav>
 
-          {/* Green Book Now Button on desktop */}
-          <div className="hidden lg:flex items-center shrink-0 z-10">
+          {/* Action Cluster on desktop */}
+          <div className="hidden lg:flex items-center gap-3 shrink-0 z-10">
+            <Link
+              to="/casestudy"
+              className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#0F6E8C] hover:text-[#2EAED6] px-3.5 py-2 rounded-full border border-[#0F6E8C]/20 hover:border-[#2EAED6] bg-[#F8FBFD] transition-all"
+            >
+              Case Study
+            </Link>
             <Link to="/contact" hash="appointment" className="bg-[#2EAED6] hover:bg-[#249CC0] text-white font-semibold py-2.5 px-6 rounded-full transition shadow-[0_8px_20px_rgba(46,174,214,0.25)] hover:shadow-[0_8px_20px_rgba(46,174,214,0.4)] text-sm whitespace-nowrap">
               Book Now
             </Link>
@@ -148,11 +154,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
           <div className="lg:hidden bg-white border-t border-slate-100 shadow-lg">
             <div className="px-6 py-4 flex flex-col gap-3">
               <Link
-                to="/"
+                to="/casestudy"
                 onClick={() => setMenuOpen(false)}
-                className="font-bold text-sm py-2 text-[#0F6E8C] flex items-center gap-1 border-b border-slate-100 mb-1"
+                className="font-bold text-sm py-2 text-[#0F6E8C] flex items-center justify-between border-b border-slate-100 mb-1"
               >
-                ← Back to Case Study Presentation
+                <span>Case Study Presentation</span>
+                <span>→</span>
               </Link>
               {HEADER_LINKS.map((l) => (
                 <Link

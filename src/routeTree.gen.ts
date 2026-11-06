@@ -11,6 +11,8 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as CaseStudyRouteImport } from './routes/case-study'
+import { Route as CasestudyRouteImport } from './routes/casestudy'
 import { Route as ClinicRouteImport } from './routes/clinic'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as GalleryRouteImport } from './routes/gallery'
@@ -28,6 +30,16 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CaseStudyRoute = CaseStudyRouteImport.update({
+  id: '/case-study',
+  path: '/case-study',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CasestudyRoute = CasestudyRouteImport.update({
+  id: '/casestudy',
+  path: '/casestudy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ClinicRoute = ClinicRouteImport.update({
@@ -74,6 +86,8 @@ const TreatmentsRoute = TreatmentsRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/case-study': typeof CaseStudyRoute
+  '/casestudy': typeof CasestudyRoute
   '/clinic': typeof ClinicRoute
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
@@ -86,6 +100,8 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/case-study': typeof CaseStudyRoute
+  '/casestudy': typeof CasestudyRoute
   '/clinic': typeof ClinicRoute
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
@@ -99,6 +115,8 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/case-study': typeof CaseStudyRoute
+  '/casestudy': typeof CasestudyRoute
   '/clinic': typeof ClinicRoute
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
@@ -113,6 +131,8 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/case-study'
+    | '/casestudy'
     | '/clinic'
     | '/contact'
     | '/gallery'
@@ -125,6 +145,8 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/case-study'
+    | '/casestudy'
     | '/clinic'
     | '/contact'
     | '/gallery'
@@ -137,6 +159,8 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/case-study'
+    | '/casestudy'
     | '/clinic'
     | '/contact'
     | '/gallery'
@@ -150,6 +174,8 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  CaseStudyRoute: typeof CaseStudyRoute
+  CasestudyRoute: typeof CasestudyRoute
   ClinicRoute: typeof ClinicRoute
   ContactRoute: typeof ContactRoute
   GalleryRoute: typeof GalleryRoute
@@ -174,6 +200,20 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/case-study': {
+      id: '/case-study'
+      path: '/case-study'
+      fullPath: '/case-study'
+      preLoaderRoute: typeof CaseStudyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/casestudy': {
+      id: '/casestudy'
+      path: '/casestudy'
+      fullPath: '/casestudy'
+      preLoaderRoute: typeof CasestudyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/clinic': {
@@ -238,6 +278,8 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  CaseStudyRoute: CaseStudyRoute,
+  CasestudyRoute: CasestudyRoute,
   ClinicRoute: ClinicRoute,
   ContactRoute: ContactRoute,
   GalleryRoute: GalleryRoute,
