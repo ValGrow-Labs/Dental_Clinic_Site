@@ -89,6 +89,13 @@ function CaseStudyPage() {
   const [isPlayingVideo, setIsPlayingVideo] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
 
+  useEffect(() => {
+    document.title = "Bin Arab Dental Centre — Case Study | ValGrow Labs";
+    return () => {
+      document.title = "Bin Arab Dental Centre — Leading Dental Clinic in Dubai";
+    };
+  }, []);
+
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text);
     setCopiedColor(text);
