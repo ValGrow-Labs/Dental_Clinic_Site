@@ -600,22 +600,20 @@ function CaseStudyPage() {
               { step: "03", title: "Review Doctors", desc: "Dr. Ibrahim's German PhD establishes credibility" },
               { step: "04", title: "Check Insurance", desc: "Daman, AXA, MetLife direct billing reassurance" },
               { step: "05", title: "Book or WhatsApp", desc: "Frictionless 1-tap conversion without hurdles" },
-            ].map((item, idx) => (
+            ].map((item) => (
               <div
                 key={item.step}
-                className={`p-3.5 sm:p-4 rounded-xl border flex flex-col sm:flex-row sm:items-center justify-between gap-2 shadow-xs ${
-                  idx === 4
-                    ? "bg-[#0F6E8C] text-white border-[#0F6E8C]"
-                    : "bg-[#F8FBFD] border-slate-200 text-slate-900"
-                }`}
+                className="group p-3.5 sm:p-4 rounded-xl border border-slate-200 bg-[#F8FBFD] hover:bg-[#0F6E8C] hover:border-[#0F6E8C] text-slate-900 hover:text-white transition-all duration-200 flex flex-col sm:flex-row sm:items-center justify-between gap-2 shadow-xs hover:shadow-md cursor-pointer"
               >
                 <div className="flex items-center gap-3.5">
-                  <span className={`text-sm sm:text-base font-black ${idx === 4 ? "text-cyan-200" : "text-[#0F6E8C]"}`}>
+                  <span className="text-sm sm:text-base font-black text-[#0F6E8C] group-hover:text-cyan-200 transition-colors">
                     STAGE {item.step}
                   </span>
-                  <h3 className="font-heading font-bold text-base sm:text-lg">{item.title}</h3>
+                  <h3 className="font-heading font-bold text-base sm:text-lg text-slate-900 group-hover:text-white transition-colors">
+                    {item.title}
+                  </h3>
                 </div>
-                <p className={`text-sm sm:text-base font-medium ${idx === 4 ? "text-white/95" : "text-slate-700"}`}>
+                <p className="text-sm sm:text-base font-medium text-slate-700 group-hover:text-white/95 transition-colors">
                   {item.desc}
                 </p>
               </div>
