@@ -249,32 +249,38 @@ function CaseStudyPage() {
           </h2>
 
           <div className="grid md:grid-cols-3 gap-4">
-            <div className="p-5 rounded-2xl bg-[#F8FBFD] border border-slate-200">
-              <span className="text-xs sm:text-sm uppercase font-extrabold text-slate-500">The Practice</span>
-              <h3 className="text-lg sm:text-xl font-heading font-bold text-slate-900 mt-1.5 mb-1.5">
+            <div className="group p-5 rounded-2xl bg-[#F8FBFD] hover:bg-[#0F6E8C] border border-slate-200 hover:border-[#0F6E8C] transition-all duration-300 cursor-pointer shadow-xs hover:shadow-md">
+              <span className="text-xs sm:text-sm uppercase font-extrabold text-slate-500 group-hover:text-cyan-200 transition-colors">
+                The Practice
+              </span>
+              <h3 className="text-lg sm:text-xl font-heading font-bold text-slate-900 group-hover:text-white transition-colors mt-1.5 mb-1.5">
                 Bin Arab Dental Centre
               </h3>
-              <p className="text-base text-slate-700 leading-relaxed">
+              <p className="text-base text-slate-700 group-hover:text-white/95 leading-relaxed transition-colors">
                 Premier prosthodontic & aesthetic clinic on Al Wasl Road, Al Safa 1, Dubai.
               </p>
             </div>
 
-            <div className="p-5 rounded-2xl bg-[#F8FBFD] border border-slate-200">
-              <span className="text-xs sm:text-sm uppercase font-extrabold text-slate-500">The Founder</span>
-              <h3 className="text-lg sm:text-xl font-heading font-bold text-slate-900 mt-1.5 mb-1.5">
+            <div className="group p-5 rounded-2xl bg-[#F8FBFD] hover:bg-[#0F6E8C] border border-slate-200 hover:border-[#0F6E8C] transition-all duration-300 cursor-pointer shadow-xs hover:shadow-md">
+              <span className="text-xs sm:text-sm uppercase font-extrabold text-slate-500 group-hover:text-cyan-200 transition-colors">
+                The Founder
+              </span>
+              <h3 className="text-lg sm:text-xl font-heading font-bold text-slate-900 group-hover:text-white transition-colors mt-1.5 mb-1.5">
                 Dr. Ibrahim Bin Arab
               </h3>
-              <p className="text-base text-slate-700 leading-relaxed">
+              <p className="text-base text-slate-700 group-hover:text-white/95 leading-relaxed transition-colors">
                 Managing Director, Emirati Specialist Prosthodontist with a PhD from Germany.
               </p>
             </div>
 
-            <div className="p-5 rounded-2xl bg-[#0F6E8C] text-white">
-              <span className="text-xs sm:text-sm uppercase font-extrabold text-cyan-200">The Mandate</span>
-              <h3 className="text-lg sm:text-xl font-heading font-bold text-white mt-1.5 mb-1.5">
+            <div className="group p-5 rounded-2xl bg-[#F8FBFD] hover:bg-[#0F6E8C] border border-slate-200 hover:border-[#0F6E8C] transition-all duration-300 cursor-pointer shadow-xs hover:shadow-md">
+              <span className="text-xs sm:text-sm uppercase font-extrabold text-slate-500 group-hover:text-cyan-200 transition-colors">
+                The Mandate
+              </span>
+              <h3 className="text-lg sm:text-xl font-heading font-bold text-slate-900 group-hover:text-white transition-colors mt-1.5 mb-1.5">
                 Luxury Transformation
               </h3>
-              <p className="text-base text-white/95 leading-relaxed">
+              <p className="text-base text-slate-700 group-hover:text-white/95 leading-relaxed transition-colors">
                 Designed & engineered by ValGrow Labs to reflect physical luxury with 100% authentic medical data.
               </p>
             </div>
@@ -298,42 +304,50 @@ function CaseStudyPage() {
           </p>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-xs">
-              <div className="w-9 h-9 rounded-lg bg-red-50 text-red-600 flex items-center justify-center mb-3">
+            <div className="group p-5 rounded-2xl bg-white hover:bg-[#0F6E8C] border border-slate-200 hover:border-[#0F6E8C] transition-all duration-300 cursor-pointer shadow-xs hover:shadow-md">
+              <div className="w-9 h-9 rounded-lg bg-red-50 group-hover:bg-white/20 text-red-600 group-hover:text-white flex items-center justify-center mb-3 transition-colors">
                 <AlertCircle className="w-5 h-5" />
               </div>
-              <h3 className="font-heading font-bold text-lg text-slate-900 mb-1.5">Outdated Visuals</h3>
-              <p className="text-base text-slate-700 leading-relaxed">
+              <h3 className="font-heading font-bold text-lg text-slate-900 group-hover:text-white transition-colors mb-1.5">
+                Outdated Visuals
+              </h3>
+              <p className="text-base text-slate-700 group-hover:text-white/95 leading-relaxed transition-colors">
                 Dated styling failed to convey the clinic's luxury physical practice.
               </p>
             </div>
 
-            <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-xs">
-              <div className="w-9 h-9 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center mb-3">
+            <div className="group p-5 rounded-2xl bg-white hover:bg-[#0F6E8C] border border-slate-200 hover:border-[#0F6E8C] transition-all duration-300 cursor-pointer shadow-xs hover:shadow-md">
+              <div className="w-9 h-9 rounded-lg bg-amber-50 group-hover:bg-white/20 text-amber-600 group-hover:text-white flex items-center justify-center mb-3 transition-colors">
                 <Smartphone className="w-5 h-5" />
               </div>
-              <h3 className="font-heading font-bold text-lg text-slate-900 mb-1.5">Broken Mobile UX</h3>
-              <p className="text-base text-slate-700 leading-relaxed">
+              <h3 className="font-heading font-bold text-lg text-slate-900 group-hover:text-white transition-colors mb-1.5">
+                Broken Mobile UX
+              </h3>
+              <p className="text-base text-slate-700 group-hover:text-white/95 leading-relaxed transition-colors">
                 Rigid tables and overflowing elements caused high smartphone bounce rates.
               </p>
             </div>
 
-            <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-xs">
-              <div className="w-9 h-9 rounded-lg bg-blue-50 text-[#0F6E8C] flex items-center justify-center mb-3">
+            <div className="group p-5 rounded-2xl bg-white hover:bg-[#0F6E8C] border border-slate-200 hover:border-[#0F6E8C] transition-all duration-300 cursor-pointer shadow-xs hover:shadow-md">
+              <div className="w-9 h-9 rounded-lg bg-blue-50 group-hover:bg-white/20 text-[#0F6E8C] group-hover:text-white flex items-center justify-center mb-3 transition-colors">
                 <Clock className="w-5 h-5" />
               </div>
-              <h3 className="font-heading font-bold text-lg text-slate-900 mb-1.5">Booking Friction</h3>
-              <p className="text-base text-slate-700 leading-relaxed">
+              <h3 className="font-heading font-bold text-lg text-slate-900 group-hover:text-white transition-colors mb-1.5">
+                Booking Friction
+              </h3>
+              <p className="text-base text-slate-700 group-hover:text-white/95 leading-relaxed transition-colors">
                 Buried forms and lengthy steps led to drop-offs in consultation requests.
               </p>
             </div>
 
-            <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-xs">
-              <div className="w-9 h-9 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center mb-3">
+            <div className="group p-5 rounded-2xl bg-white hover:bg-[#0F6E8C] border border-slate-200 hover:border-[#0F6E8C] transition-all duration-300 cursor-pointer shadow-xs hover:shadow-md">
+              <div className="w-9 h-9 rounded-lg bg-emerald-50 group-hover:bg-white/20 text-emerald-600 group-hover:text-white flex items-center justify-center mb-3 transition-colors">
                 <MessageCircle className="w-5 h-5" />
               </div>
-              <h3 className="font-heading font-bold text-lg text-slate-900 mb-1.5">No WhatsApp Chat</h3>
-              <p className="text-base text-slate-700 leading-relaxed">
+              <h3 className="font-heading font-bold text-lg text-slate-900 group-hover:text-white transition-colors mb-1.5">
+                No WhatsApp Chat
+              </h3>
+              <p className="text-base text-slate-700 group-hover:text-white/95 leading-relaxed transition-colors">
                 Absence of direct WhatsApp chat lost patients in a mobile-first market.
               </p>
             </div>
@@ -357,42 +371,62 @@ function CaseStudyPage() {
           </p>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-3.5">
-            <div className="p-4 sm:p-5 rounded-2xl bg-[#F8FBFD] border border-slate-200">
-              <span className="text-sm font-black text-[#0F6E8C] block mb-1">01</span>
-              <h3 className="font-heading font-bold text-base sm:text-lg text-slate-900 mb-1.5">Apple Minimalism</h3>
-              <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
+            <div className="group p-4 sm:p-5 rounded-2xl bg-[#F8FBFD] hover:bg-[#0F6E8C] border border-slate-200 hover:border-[#0F6E8C] transition-all duration-300 cursor-pointer shadow-xs hover:shadow-md">
+              <span className="text-sm font-black text-[#0F6E8C] group-hover:text-cyan-200 transition-colors block mb-1">
+                01
+              </span>
+              <h3 className="font-heading font-bold text-base sm:text-lg text-slate-900 group-hover:text-white transition-colors mb-1.5">
+                Apple Minimalism
+              </h3>
+              <p className="text-sm sm:text-base text-slate-700 group-hover:text-white/95 leading-relaxed transition-colors">
                 Soft blues, rounded cards, generous negative space, and clinical calm.
               </p>
             </div>
 
-            <div className="p-4 sm:p-5 rounded-2xl bg-[#F8FBFD] border border-slate-200">
-              <span className="text-sm font-black text-[#2EAED6] block mb-1">02</span>
-              <h3 className="font-heading font-bold text-base sm:text-lg text-slate-900 mb-1.5">Video Hero</h3>
-              <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
+            <div className="group p-4 sm:p-5 rounded-2xl bg-[#F8FBFD] hover:bg-[#0F6E8C] border border-slate-200 hover:border-[#0F6E8C] transition-all duration-300 cursor-pointer shadow-xs hover:shadow-md">
+              <span className="text-sm font-black text-[#2EAED6] group-hover:text-cyan-200 transition-colors block mb-1">
+                02
+              </span>
+              <h3 className="font-heading font-bold text-base sm:text-lg text-slate-900 group-hover:text-white transition-colors mb-1.5">
+                Video Hero
+              </h3>
+              <p className="text-sm sm:text-base text-slate-700 group-hover:text-white/95 leading-relaxed transition-colors">
                 Ambient 100vh clinic footage with natural scroll-away flow.
               </p>
             </div>
 
-            <div className="p-4 sm:p-5 rounded-2xl bg-[#F8FBFD] border border-slate-200">
-              <span className="text-sm font-black text-indigo-600 block mb-1">03</span>
-              <h3 className="font-heading font-bold text-base sm:text-lg text-slate-900 mb-1.5">Mobile-First UX</h3>
-              <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
+            <div className="group p-4 sm:p-5 rounded-2xl bg-[#F8FBFD] hover:bg-[#0F6E8C] border border-slate-200 hover:border-[#0F6E8C] transition-all duration-300 cursor-pointer shadow-xs hover:shadow-md">
+              <span className="text-sm font-black text-indigo-600 group-hover:text-cyan-200 transition-colors block mb-1">
+                03
+              </span>
+              <h3 className="font-heading font-bold text-base sm:text-lg text-slate-900 group-hover:text-white transition-colors mb-1.5">
+                Mobile-First UX
+              </h3>
+              <p className="text-sm sm:text-base text-slate-700 group-hover:text-white/95 leading-relaxed transition-colors">
                 Sticky navigation with instant thumb-friendly booking CTAs.
               </p>
             </div>
 
-            <div className="p-4 sm:p-5 rounded-2xl bg-[#F8FBFD] border border-slate-200">
-              <span className="text-sm font-black text-purple-600 block mb-1">04</span>
-              <h3 className="font-heading font-bold text-base sm:text-lg text-slate-900 mb-1.5">Real Photography</h3>
-              <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
+            <div className="group p-4 sm:p-5 rounded-2xl bg-[#F8FBFD] hover:bg-[#0F6E8C] border border-slate-200 hover:border-[#0F6E8C] transition-all duration-300 cursor-pointer shadow-xs hover:shadow-md">
+              <span className="text-sm font-black text-purple-600 group-hover:text-cyan-200 transition-colors block mb-1">
+                04
+              </span>
+              <h3 className="font-heading font-bold text-base sm:text-lg text-slate-900 group-hover:text-white transition-colors mb-1.5">
+                Real Photography
+              </h3>
+              <p className="text-sm sm:text-base text-slate-700 group-hover:text-white/95 leading-relaxed transition-colors">
                 Authentic doctors, German credentials, and zero synthetic AI models.
               </p>
             </div>
 
-            <div className="p-4 sm:p-5 rounded-2xl bg-[#F8FBFD] border border-slate-200">
-              <span className="text-sm font-black text-emerald-600 block mb-1">05</span>
-              <h3 className="font-heading font-bold text-base sm:text-lg text-slate-900 mb-1.5">1-Tap WhatsApp</h3>
-              <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
+            <div className="group p-4 sm:p-5 rounded-2xl bg-[#F8FBFD] hover:bg-[#0F6E8C] border border-slate-200 hover:border-[#0F6E8C] transition-all duration-300 cursor-pointer shadow-xs hover:shadow-md">
+              <span className="text-sm font-black text-emerald-600 group-hover:text-cyan-200 transition-colors block mb-1">
+                05
+              </span>
+              <h3 className="font-heading font-bold text-base sm:text-lg text-slate-900 group-hover:text-white transition-colors mb-1.5">
+                1-Tap WhatsApp
+              </h3>
+              <p className="text-sm sm:text-base text-slate-700 group-hover:text-white/95 leading-relaxed transition-colors">
                 Persistent floating button with pre-filled greeting text.
               </p>
             </div>
@@ -427,27 +461,34 @@ function CaseStudyPage() {
                 { name: "Insurance (/insurance)", desc: "Direct Billing Partners & FAQ" },
                 { name: "Contact (/contact)", desc: "Online Booking & Google Map" },
               ].map((item) => (
-                <div key={item.name} className="p-3.5 rounded-xl bg-[#F8FBFD] border border-slate-200">
-                  <p className="font-heading font-bold text-slate-900 text-base sm:text-lg">{item.name}</p>
-                  <p className="text-slate-700 text-sm sm:text-base font-medium mt-1 leading-snug">{item.desc}</p>
+                <div
+                  key={item.name}
+                  className="group p-3.5 rounded-xl bg-[#F8FBFD] hover:bg-[#0F6E8C] border border-slate-200 hover:border-[#0F6E8C] transition-all duration-300 cursor-pointer shadow-xs hover:shadow-md"
+                >
+                  <p className="font-heading font-bold text-slate-900 group-hover:text-white text-base sm:text-lg transition-colors">
+                    {item.name}
+                  </p>
+                  <p className="text-slate-700 group-hover:text-white/95 text-sm sm:text-base font-medium mt-1 leading-snug transition-colors">
+                    {item.desc}
+                  </p>
                 </div>
               ))}
             </div>
 
             <div className="pt-3.5 border-t border-slate-200 grid sm:grid-cols-2 gap-3.5 text-base text-slate-700">
-              <div className="p-4 rounded-xl bg-slate-50 border border-slate-200/80">
-                <strong className="text-slate-900 block font-bold text-base sm:text-lg mb-1">
+              <div className="group p-4 rounded-xl bg-slate-50 hover:bg-[#0F6E8C] border border-slate-200/80 hover:border-[#0F6E8C] transition-all duration-300 cursor-pointer shadow-xs hover:shadow-md">
+                <strong className="text-slate-900 group-hover:text-white block font-bold text-base sm:text-lg mb-1 transition-colors">
                   Single-Page Flow on Homepage:
                 </strong>
-                <p className="text-slate-700 text-sm sm:text-base leading-relaxed">
+                <p className="text-slate-700 group-hover:text-white/95 text-sm sm:text-base leading-relaxed transition-colors">
                   Smooth hash scrolling (#services, #team, #appointment) lets visitors complete their journey without page reloads.
                 </p>
               </div>
-              <div className="p-4 rounded-xl bg-slate-50 border border-slate-200/80">
-                <strong className="text-slate-900 block font-bold text-base sm:text-lg mb-1">
+              <div className="group p-4 rounded-xl bg-slate-50 hover:bg-[#0F6E8C] border border-slate-200/80 hover:border-[#0F6E8C] transition-all duration-300 cursor-pointer shadow-xs hover:shadow-md">
+                <strong className="text-slate-900 group-hover:text-white block font-bold text-base sm:text-lg mb-1 transition-colors">
                   Deep Route Indexation:
                 </strong>
-                <p className="text-slate-700 text-sm sm:text-base leading-relaxed">
+                <p className="text-slate-700 group-hover:text-white/95 text-sm sm:text-base leading-relaxed transition-colors">
                   Dedicated routes enable local Google SEO ranking and direct landing pages for ad campaigns.
                 </p>
               </div>
@@ -548,25 +589,41 @@ function CaseStudyPage() {
           </p>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3.5 mb-4">
-            <div className="p-4 rounded-xl bg-white border border-slate-200 shadow-xs">
-              <Zap className="w-6 h-6 text-amber-500 mb-1.5" />
-              <p className="font-heading font-bold text-base sm:text-lg text-slate-900">Vite 8</p>
-              <p className="text-sm sm:text-base text-slate-700 mt-0.5">Sub-second HMR & build</p>
+            <div className="group p-4 rounded-xl bg-white hover:bg-[#0F6E8C] border border-slate-200 hover:border-[#0F6E8C] transition-all duration-300 cursor-pointer shadow-xs hover:shadow-md">
+              <Zap className="w-6 h-6 text-amber-500 group-hover:text-amber-300 mb-1.5 transition-colors" />
+              <p className="font-heading font-bold text-base sm:text-lg text-slate-900 group-hover:text-white transition-colors">
+                Vite 8
+              </p>
+              <p className="text-sm sm:text-base text-slate-700 group-hover:text-white/95 mt-0.5 transition-colors">
+                Sub-second HMR & build
+              </p>
             </div>
-            <div className="p-4 rounded-xl bg-white border border-slate-200 shadow-xs">
-              <Code2 className="w-6 h-6 text-blue-500 mb-1.5" />
-              <p className="font-heading font-bold text-base sm:text-lg text-slate-900">React 19</p>
-              <p className="text-sm sm:text-base text-slate-700 mt-0.5">Concurrent UI rendering</p>
+            <div className="group p-4 rounded-xl bg-white hover:bg-[#0F6E8C] border border-slate-200 hover:border-[#0F6E8C] transition-all duration-300 cursor-pointer shadow-xs hover:shadow-md">
+              <Code2 className="w-6 h-6 text-blue-500 group-hover:text-cyan-300 mb-1.5 transition-colors" />
+              <p className="font-heading font-bold text-base sm:text-lg text-slate-900 group-hover:text-white transition-colors">
+                React 19
+              </p>
+              <p className="text-sm sm:text-base text-slate-700 group-hover:text-white/95 mt-0.5 transition-colors">
+                Concurrent UI rendering
+              </p>
             </div>
-            <div className="p-4 rounded-xl bg-white border border-slate-200 shadow-xs">
-              <Shield className="w-6 h-6 text-indigo-500 mb-1.5" />
-              <p className="font-heading font-bold text-base sm:text-lg text-slate-900">TypeScript 5.8</p>
-              <p className="text-sm sm:text-base text-slate-700 mt-0.5">Strict end-to-end types</p>
+            <div className="group p-4 rounded-xl bg-white hover:bg-[#0F6E8C] border border-slate-200 hover:border-[#0F6E8C] transition-all duration-300 cursor-pointer shadow-xs hover:shadow-md">
+              <Shield className="w-6 h-6 text-indigo-500 group-hover:text-indigo-200 mb-1.5 transition-colors" />
+              <p className="font-heading font-bold text-base sm:text-lg text-slate-900 group-hover:text-white transition-colors">
+                TypeScript 5.8
+              </p>
+              <p className="text-sm sm:text-base text-slate-700 group-hover:text-white/95 mt-0.5 transition-colors">
+                Strict end-to-end types
+              </p>
             </div>
-            <div className="p-4 rounded-xl bg-white border border-slate-200 shadow-xs">
-              <Layers className="w-6 h-6 text-emerald-500 mb-1.5" />
-              <p className="font-heading font-bold text-base sm:text-lg text-slate-900">TanStack Router</p>
-              <p className="text-sm sm:text-base text-slate-700 mt-0.5">Type-safe route trees</p>
+            <div className="group p-4 rounded-xl bg-white hover:bg-[#0F6E8C] border border-slate-200 hover:border-[#0F6E8C] transition-all duration-300 cursor-pointer shadow-xs hover:shadow-md">
+              <Layers className="w-6 h-6 text-emerald-500 group-hover:text-emerald-300 mb-1.5 transition-colors" />
+              <p className="font-heading font-bold text-base sm:text-lg text-slate-900 group-hover:text-white transition-colors">
+                TanStack Router
+              </p>
+              <p className="text-sm sm:text-base text-slate-700 group-hover:text-white/95 mt-0.5 transition-colors">
+                Type-safe route trees
+              </p>
             </div>
           </div>
 
@@ -600,22 +657,20 @@ function CaseStudyPage() {
               { step: "03", title: "Review Doctors", desc: "Dr. Ibrahim's German PhD establishes credibility" },
               { step: "04", title: "Check Insurance", desc: "Daman, AXA, MetLife direct billing reassurance" },
               { step: "05", title: "Book or WhatsApp", desc: "Frictionless 1-tap conversion without hurdles" },
-            ].map((item, idx) => (
+            ].map((item) => (
               <div
                 key={item.step}
-                className={`p-3.5 sm:p-4 rounded-xl border flex flex-col sm:flex-row sm:items-center justify-between gap-2 shadow-xs ${
-                  idx === 4
-                    ? "bg-[#0F6E8C] text-white border-[#0F6E8C]"
-                    : "bg-[#F8FBFD] border-slate-200 text-slate-900"
-                }`}
+                className="group p-3.5 sm:p-4 rounded-xl border border-slate-200 bg-[#F8FBFD] hover:bg-[#0F6E8C] hover:border-[#0F6E8C] text-slate-900 hover:text-white transition-all duration-300 flex flex-col sm:flex-row sm:items-center justify-between gap-2 shadow-xs hover:shadow-md cursor-pointer"
               >
                 <div className="flex items-center gap-3.5">
-                  <span className={`text-sm sm:text-base font-black ${idx === 4 ? "text-cyan-200" : "text-[#0F6E8C]"}`}>
+                  <span className="text-sm sm:text-base font-black text-[#0F6E8C] group-hover:text-cyan-200 transition-colors">
                     STAGE {item.step}
                   </span>
-                  <h3 className="font-heading font-bold text-base sm:text-lg">{item.title}</h3>
+                  <h3 className="font-heading font-bold text-base sm:text-lg text-slate-900 group-hover:text-white transition-colors">
+                    {item.title}
+                  </h3>
                 </div>
-                <p className={`text-sm sm:text-base font-medium ${idx === 4 ? "text-white/95" : "text-slate-700"}`}>
+                <p className="text-sm sm:text-base font-medium text-slate-700 group-hover:text-white/95 transition-colors">
                   {item.desc}
                 </p>
               </div>
@@ -623,17 +678,29 @@ function CaseStudyPage() {
           </div>
 
           <div className="grid sm:grid-cols-3 gap-3.5 text-sm sm:text-base text-slate-700">
-            <div className="p-4 rounded-xl bg-[#F8FBFD] border border-slate-200">
-              <strong className="text-slate-900 block font-bold text-base sm:text-lg mb-1">Sticky Header CTA:</strong>
-              "Book Now" button stays pinned throughout the visit.
+            <div className="group p-4 rounded-xl bg-[#F8FBFD] hover:bg-[#0F6E8C] border border-slate-200 hover:border-[#0F6E8C] transition-all duration-300 cursor-pointer shadow-xs hover:shadow-md">
+              <strong className="text-slate-900 group-hover:text-white block font-bold text-base sm:text-lg mb-1 transition-colors">
+                Sticky Header CTA:
+              </strong>
+              <p className="text-slate-700 group-hover:text-white/95 leading-relaxed transition-colors">
+                "Book Now" button stays pinned throughout the visit.
+              </p>
             </div>
-            <div className="p-4 rounded-xl bg-[#F8FBFD] border border-slate-200">
-              <strong className="text-slate-900 block font-bold text-base sm:text-lg mb-1">Dual Phone Protocols:</strong>
-              Landline (+971 4 320 2008) and Mobile (+971 54 4432808) direct dial.
+            <div className="group p-4 rounded-xl bg-[#F8FBFD] hover:bg-[#0F6E8C] border border-slate-200 hover:border-[#0F6E8C] transition-all duration-300 cursor-pointer shadow-xs hover:shadow-md">
+              <strong className="text-slate-900 group-hover:text-white block font-bold text-base sm:text-lg mb-1 transition-colors">
+                Dual Phone Protocols:
+              </strong>
+              <p className="text-slate-700 group-hover:text-white/95 leading-relaxed transition-colors">
+                Landline (+971 4 320 2008) and Mobile (+971 54 4432808) direct dial.
+              </p>
             </div>
-            <div className="p-4 rounded-xl bg-[#F8FBFD] border border-slate-200">
-              <strong className="text-slate-900 block font-bold text-base sm:text-lg mb-1">Local SEO Ready:</strong>
-              Google Maps embed & Al Safa 1 physical address markup.
+            <div className="group p-4 rounded-xl bg-[#F8FBFD] hover:bg-[#0F6E8C] border border-slate-200 hover:border-[#0F6E8C] transition-all duration-300 cursor-pointer shadow-xs hover:shadow-md">
+              <strong className="text-slate-900 group-hover:text-white block font-bold text-base sm:text-lg mb-1 transition-colors">
+                Local SEO Ready:
+              </strong>
+              <p className="text-slate-700 group-hover:text-white/95 leading-relaxed transition-colors">
+                Google Maps embed & Al Safa 1 physical address markup.
+              </p>
             </div>
           </div>
         </div>
