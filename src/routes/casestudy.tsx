@@ -41,17 +41,17 @@ const PALETTE = [
 ------------------------------------------------------------------------- */
 function ValGrowLogo() {
   return (
-    <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+    <div className="flex items-center gap-2 sm:gap-3 shrink-0 select-none">
       <img
         src="/images/valgrow-logo.jpg"
         alt="ValGrow Labs Logo"
-        className="w-8 h-8 sm:w-10 sm:h-10 object-contain rounded-lg sm:rounded-xl shadow-xs shrink-0"
+        className="w-7 h-7 sm:w-10 sm:h-10 object-contain rounded-lg sm:rounded-xl shadow-xs shrink-0"
       />
-      <div className="flex flex-col leading-tight">
-        <span className="font-heading font-bold text-slate-900 text-base sm:text-xl tracking-tight">
+      <div className="flex flex-col leading-tight shrink-0 whitespace-nowrap">
+        <span className="font-heading font-bold text-slate-900 text-sm sm:text-xl tracking-tight">
           ValGrow Labs
         </span>
-        <span className="text-[9px] sm:text-[11px] font-bold tracking-[0.16em] sm:tracking-[0.2em] text-[#0F6E8C] uppercase">
+        <span className="text-[8px] sm:text-[11px] font-bold tracking-[0.14em] sm:tracking-[0.2em] text-[#0F6E8C] uppercase">
           ENGINEERING STUDIO
         </span>
       </div>
@@ -120,30 +120,33 @@ function CaseStudyPage() {
           TOP NAVBAR (MOBILE-ADAPTIVE RWD STUDIO HEADER)
       ------------------------------------------------------------------- */}
       <header className="sticky top-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-xs">
-        <div className="max-w-6xl mx-auto px-3.5 sm:px-6 h-16 sm:h-20 flex items-center justify-between gap-2">
-          <div className="flex items-center gap-3 sm:gap-6 min-w-0">
+        <div className="max-w-6xl mx-auto px-3 sm:px-6 h-15 sm:h-20 flex items-center justify-between gap-1.5 sm:gap-4">
+          <div className="flex items-center gap-2 sm:gap-6 shrink-0">
             <ValGrowLogo />
-            <div className="hidden md:flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-600 border-l border-slate-200 pl-4 sm:pl-6">
+            <div className="hidden lg:flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-600 border-l border-slate-200 pl-4 sm:pl-6">
               <span className="w-2.5 h-2.5 rounded-full bg-[#2EAED6]" />
               <span>WORK / BIN ARAB DENTAL</span>
             </div>
           </div>
 
-          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+          <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
             <Link
               to="/"
-              className="inline-flex items-center gap-1 sm:gap-1.5 text-xs sm:text-sm font-semibold text-slate-800 hover:text-[#0F6E8C] px-3 sm:px-4 py-2 sm:py-2.5 rounded-full border border-slate-300 hover:border-[#2EAED6] bg-white transition-all shadow-xs"
+              title="Visit Live Clinic"
+              className="inline-flex items-center gap-1 sm:gap-1.5 text-[11px] sm:text-sm font-semibold text-slate-800 hover:text-[#0F6E8C] px-2.5 sm:px-4 py-1.5 sm:py-2.5 rounded-full border border-slate-300 hover:border-[#2EAED6] bg-white transition-all shadow-xs shrink-0 whitespace-nowrap"
             >
-              <span className="hidden xs:inline">Visit Live Clinic</span>
-              <span className="xs:hidden">Live Clinic</span>
-              <ExternalLink className="w-3.5 h-3.5" />
+              <span className="hidden sm:inline">Visit Live Clinic</span>
+              <span className="hidden min-[360px]:inline sm:hidden">Live Clinic</span>
+              <span className="min-[360px]:hidden">Clinic</span>
+              <ExternalLink className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#0F6E8C]" />
             </Link>
             <a
               href="mailto:contact@valgrowlabs.com"
-              className="inline-flex items-center gap-1 sm:gap-1.5 bg-[#2EAED6] hover:bg-[#249CC0] text-white text-xs sm:text-sm font-bold px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full shadow-[0_4px_14px_rgba(46,174,214,0.3)] transition-all hover:shadow-[0_6px_20px_rgba(46,174,214,0.4)]"
+              title="Let's Talk"
+              className="inline-flex items-center gap-1 sm:gap-1.5 bg-[#2EAED6] hover:bg-[#249CC0] text-white text-[11px] sm:text-sm font-bold px-2.5 sm:px-5 py-1.5 sm:py-2.5 rounded-full shadow-[0_2px_10px_rgba(46,174,214,0.25)] transition-all shrink-0 whitespace-nowrap"
             >
               <span>Let's Talk</span>
-              <ArrowRight className="w-3.5 h-3.5" />
+              <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
             </a>
           </div>
         </div>
