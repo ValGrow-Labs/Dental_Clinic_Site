@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as ClinicRouteImport } from './routes/clinic'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as InsuranceRouteImport } from './routes/insurance'
@@ -27,6 +28,11 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ClinicRoute = ClinicRouteImport.update({
+  id: '/clinic',
+  path: '/clinic',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -68,6 +74,7 @@ const TreatmentsRoute = TreatmentsRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/clinic': typeof ClinicRoute
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
   '/insurance': typeof InsuranceRoute
@@ -79,6 +86,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/clinic': typeof ClinicRoute
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
   '/insurance': typeof InsuranceRoute
@@ -91,6 +99,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/clinic': typeof ClinicRoute
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
   '/insurance': typeof InsuranceRoute
@@ -104,6 +113,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/clinic'
     | '/contact'
     | '/gallery'
     | '/insurance'
@@ -115,6 +125,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/clinic'
     | '/contact'
     | '/gallery'
     | '/insurance'
@@ -126,6 +137,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/clinic'
     | '/contact'
     | '/gallery'
     | '/insurance'
@@ -138,6 +150,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  ClinicRoute: typeof ClinicRoute
   ContactRoute: typeof ContactRoute
   GalleryRoute: typeof GalleryRoute
   InsuranceRoute: typeof InsuranceRoute
@@ -161,6 +174,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/clinic': {
+      id: '/clinic'
+      path: '/clinic'
+      fullPath: '/clinic'
+      preLoaderRoute: typeof ClinicRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -218,6 +238,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  ClinicRoute: ClinicRoute,
   ContactRoute: ContactRoute,
   GalleryRoute: GalleryRoute,
   InsuranceRoute: InsuranceRoute,

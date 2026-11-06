@@ -147,6 +147,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
         {menuOpen && (
           <div className="lg:hidden bg-white border-t border-slate-100 shadow-lg">
             <div className="px-6 py-4 flex flex-col gap-3">
+              <Link
+                to="/"
+                onClick={() => setMenuOpen(false)}
+                className="font-bold text-sm py-2 text-[#0F6E8C] flex items-center gap-1 border-b border-slate-100 mb-1"
+              >
+                ← Back to Case Study Presentation
+              </Link>
               {HEADER_LINKS.map((l) => (
                 <Link
                   key={l.path}
