@@ -180,13 +180,11 @@ function CaseStudyPage() {
               </h1>
 
               <p className="text-base sm:text-xl lg:text-2xl font-heading font-bold text-slate-800 leading-snug mb-2 sm:mb-3">
-                Building an Apple-inspired digital experience for Dubai’s leading dental centre.
+                Building an Apple inspired digital experience for Dubai’s leading dental centre.
               </p>
 
               <p className="text-sm sm:text-base lg:text-lg text-slate-700 leading-relaxed mb-5 sm:mb-6">
-                Designed and engineered by <strong>ValGrow Labs</strong>, this project transformed Bin Arab Dental Centre
-                into a modern, high-converting digital storefront—featuring 100vh ambient video, instant WhatsApp booking,
-                and a lightning-fast React 19 stack while preserving 100% authentic clinical content.
+                Designed and engineered by <strong>ValGrow Labs</strong> this project took the Bin Arab Dental Centre and turned it into a fully modern, high converting digital store front with 100vh ambient video, instant WhatsApp booking and a blazing fast React 19 stack. All the authentic clinical content has been retained.
               </p>
 
               {/* Call to action buttons (Full width stack on mobile, inline on tablet/desktop) */}
@@ -290,7 +288,7 @@ function CaseStudyPage() {
                 Dr. Ibrahim Bin Arab
               </h3>
               <p className="text-sm sm:text-base text-slate-700 group-hover:text-white/95 leading-relaxed transition-colors">
-                Managing Director, Emirati Specialist Prosthodontist with a PhD from Germany.
+                Managing Director, Emirati Specialist Prosthodontist (PhD from Germany).
               </p>
             </div>
 
@@ -302,7 +300,7 @@ function CaseStudyPage() {
                 Luxury Transformation
               </h3>
               <p className="text-sm sm:text-base text-slate-700 group-hover:text-white/95 leading-relaxed transition-colors">
-                Designed & engineered by ValGrow Labs to reflect physical luxury with 100% authentic medical data.
+                Designed & engineered by ValGrow Labs to reflect physical luxury with 100% genuine medical data.
               </p>
             </div>
           </div>
@@ -333,7 +331,7 @@ function CaseStudyPage() {
                 Outdated Visuals
               </h3>
               <p className="text-sm sm:text-base text-slate-700 group-hover:text-white/95 leading-relaxed transition-colors">
-                Dated styling failed to convey the clinic's luxury physical practice.
+                Dated styling didn't at all reflect the clinic's luxury as a physical practice.
               </p>
             </div>
 
@@ -345,7 +343,7 @@ function CaseStudyPage() {
                 Broken Mobile UX
               </h3>
               <p className="text-sm sm:text-base text-slate-700 group-hover:text-white/95 leading-relaxed transition-colors">
-                Rigid tables and overflowing elements caused high smartphone bounce rates.
+                Rigid tables and overflowing elements were the cause of very high smartphone bounce rates.
               </p>
             </div>
 
@@ -357,7 +355,7 @@ function CaseStudyPage() {
                 Booking Friction
               </h3>
               <p className="text-sm sm:text-base text-slate-700 group-hover:text-white/95 leading-relaxed transition-colors">
-                Buried forms and lengthy steps led to drop-offs in consultation requests.
+                Buried forms and long winded steps resulted in a drop off in consultation requests.
               </p>
             </div>
 
@@ -369,7 +367,7 @@ function CaseStudyPage() {
                 No WhatsApp Chat
               </h3>
               <p className="text-sm sm:text-base text-slate-700 group-hover:text-white/95 leading-relaxed transition-colors">
-                Absence of direct WhatsApp chat lost patients in a mobile-first market.
+                No direct WhatsApp chat to lose patients in a mobile first market.
               </p>
             </div>
           </div>
@@ -400,7 +398,7 @@ function CaseStudyPage() {
                 Apple Minimalism
               </h3>
               <p className="text-xs sm:text-sm lg:text-base text-slate-700 group-hover:text-white/95 leading-relaxed transition-colors">
-                Soft blues, rounded cards, generous negative space, and clinical calm.
+                Soft blues, rounded cards, copious negative space and a very clinical calm.
               </p>
             </div>
 
@@ -412,7 +410,7 @@ function CaseStudyPage() {
                 Video Hero
               </h3>
               <p className="text-xs sm:text-sm lg:text-base text-slate-700 group-hover:text-white/95 leading-relaxed transition-colors">
-                Ambient 100vh clinic footage with natural scroll-away flow.
+                Ambient 100vh clinic footage with natural scroll away flow.
               </p>
             </div>
 
@@ -421,10 +419,10 @@ function CaseStudyPage() {
                 03
               </span>
               <h3 className="font-heading font-bold text-base sm:text-lg text-slate-900 group-hover:text-white transition-colors mb-1">
-                Mobile-First UX
+                Mobile First UX
               </h3>
               <p className="text-xs sm:text-sm lg:text-base text-slate-700 group-hover:text-white/95 leading-relaxed transition-colors">
-                Sticky navigation with instant thumb-friendly booking CTAs.
+                Sticky nav with instant thumb friendly booking CTAs.
               </p>
             </div>
 
@@ -436,7 +434,7 @@ function CaseStudyPage() {
                 Real Photography
               </h3>
               <p className="text-xs sm:text-sm lg:text-base text-slate-700 group-hover:text-white/95 leading-relaxed transition-colors">
-                Authentic doctors, German credentials, and zero synthetic AI models.
+                Authentic doctors, German qualifications and zero synthetic AI models.
               </p>
             </div>
 
@@ -448,7 +446,7 @@ function CaseStudyPage() {
                 1-Tap WhatsApp
               </h3>
               <p className="text-xs sm:text-sm lg:text-base text-slate-700 group-hover:text-white/95 leading-relaxed transition-colors">
-                Persistent floating button with pre-filled greeting text.
+                Persistent floating button with pre populated greeting text.
               </p>
             </div>
           </div>
@@ -500,10 +498,10 @@ function CaseStudyPage() {
             <div className="pt-3 border-t border-slate-200 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-3.5 text-sm sm:text-base text-slate-700">
               <div className="group p-3.5 sm:p-4 rounded-xl bg-slate-50 hover:bg-[#0F6E8C] border border-slate-200/80 hover:border-[#0F6E8C] transition-all duration-300 cursor-pointer shadow-xs hover:shadow-md">
                 <strong className="text-slate-900 group-hover:text-white block font-bold text-sm sm:text-base lg:text-lg mb-1 transition-colors">
-                  Single-Page Flow on Homepage:
+                  Single Page Flow on Homepage:
                 </strong>
                 <p className="text-slate-700 group-hover:text-white/95 text-xs sm:text-sm lg:text-base leading-relaxed transition-colors">
-                  Smooth hash scrolling (#services, #team, #appointment) lets visitors complete their journey without page reloads.
+                  Smooth hash scrolling (#services, #team, #appointment) so users can complete their journey without any page reloads.
                 </p>
               </div>
               <div className="group p-3.5 sm:p-4 rounded-xl bg-slate-50 hover:bg-[#0F6E8C] border border-slate-200/80 hover:border-[#0F6E8C] transition-all duration-300 cursor-pointer shadow-xs hover:shadow-md">
@@ -511,7 +509,7 @@ function CaseStudyPage() {
                   Deep Route Indexation:
                 </strong>
                 <p className="text-slate-700 group-hover:text-white/95 text-xs sm:text-sm lg:text-base leading-relaxed transition-colors">
-                  Dedicated routes enable local Google SEO ranking and direct landing pages for ad campaigns.
+                  Dedicated routes allow for local Google SEO ranking and dedicated landing pages for your ad campaigns.
                 </p>
               </div>
             </div>
@@ -569,7 +567,7 @@ function CaseStudyPage() {
                 <div>
                   <span className="text-xs sm:text-sm font-mono font-bold text-[#0F6E8C]">Body · Inter Regular</span>
                   <p className="text-xs sm:text-base text-slate-700 leading-relaxed mt-0.5">
-                    Clear optical legibility on mobile devices with generous line-height and calibrated letter-spacing.
+                    Clear optical legibility on mobile devices, with generous line height and properly calibrated letter spacing.
                   </p>
                 </div>
               </div>
@@ -619,7 +617,7 @@ function CaseStudyPage() {
                 Vite 8
               </p>
               <p className="text-xs sm:text-sm text-slate-700 group-hover:text-white/95 mt-0.5 transition-colors">
-                Sub-second HMR
+                Sub second HMR
               </p>
             </div>
             <div className="group p-3.5 sm:p-4 rounded-xl bg-white hover:bg-[#0F6E8C] border border-slate-200 hover:border-[#0F6E8C] transition-all duration-300 cursor-pointer shadow-xs hover:shadow-md">
@@ -646,7 +644,7 @@ function CaseStudyPage() {
                 TanStack Router
               </p>
               <p className="text-xs sm:text-sm text-slate-700 group-hover:text-white/95 mt-0.5 transition-colors">
-                Type-safe routes
+                Type safe routes
               </p>
             </div>
           </div>
@@ -707,7 +705,7 @@ function CaseStudyPage() {
                 Sticky Header CTA:
               </strong>
               <p className="text-slate-700 group-hover:text-white/95 leading-relaxed transition-colors">
-                "Book Now" button stays pinned throughout the visit.
+                "Book Now" button is pinned for the duration of the visit.
               </p>
             </div>
             <div className="group p-3.5 sm:p-4 rounded-xl bg-[#F8FBFD] hover:bg-[#0F6E8C] border border-slate-200 hover:border-[#0F6E8C] transition-all duration-300 cursor-pointer shadow-xs hover:shadow-md">
@@ -742,10 +740,10 @@ function CaseStudyPage() {
               </div>
               <div>
                 <h2 className="text-lg sm:text-xl lg:text-2xl font-heading font-bold text-slate-900">
-                  Ready to engineer your next digital platform?
+                  Ready to build your next digital platform?
                 </h2>
                 <p className="text-xs sm:text-sm lg:text-base text-slate-600 mt-0.5 sm:mt-1 max-w-xl">
-                  ValGrow Labs partners with ambitious brands to build scalable, high-converting digital products.
+                  ValGrow Labs work with ambitious brands to build scalable, high-converting digital products.
                 </p>
               </div>
             </div>
@@ -777,7 +775,7 @@ function CaseStudyPage() {
           <div className="md:col-span-5 space-y-3">
             <ValGrowLogoDark />
             <p className="text-xs sm:text-sm lg:text-base text-slate-300 leading-relaxed max-w-sm">
-              We design and engineer bespoke software platforms, high-converting digital storefronts, and intelligent operations systems for forward-thinking enterprises.
+              We design and engineer custom software platforms, high converting digital storefronts and intelligent operations systems for progressive businesses.
             </p>
             <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold text-emerald-400">
               <span className="w-2.5 h-2.5 rounded-full bg-emerald-400" />
