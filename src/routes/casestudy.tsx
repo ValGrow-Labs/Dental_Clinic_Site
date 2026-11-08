@@ -168,21 +168,15 @@ function CaseStudyPage() {
                 Designed and engineered by <strong>ValGrow Labs</strong> this project took the Bin Arab Dental Centre and turned it into a fully modern, high converting digital store front with 100vh ambient video, instant WhatsApp booking and a blazing fast React 19 stack. All the authentic clinical content has been retained.
               </p>
 
-              {/* Call to action buttons (Full width stack on mobile, inline on tablet/desktop) */}
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto">
+              {/* Call to action buttons (Full width on mobile, inline on tablet/desktop) */}
+              <div className="flex items-center gap-3 w-full sm:w-auto">
                 <Link
                   to="/"
-                  className="inline-flex items-center justify-center gap-2 bg-[#2EAED6] hover:bg-[#249CC0] text-white text-sm sm:text-base font-bold px-6 py-3 rounded-full shadow-[0_8px_20px_rgba(46,174,214,0.3)] transition-all hover:scale-[1.02] active:scale-[0.98] text-center"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#2EAED6] hover:bg-[#249CC0] text-white text-sm sm:text-base font-bold px-7 py-3 rounded-full shadow-[0_8px_20px_rgba(46,174,214,0.3)] transition-all hover:scale-[1.02] active:scale-[0.98] text-center"
                 >
                   <span>Explore Live Clinic</span>
                   <ExternalLink className="w-4 h-4" />
                 </Link>
-                <a
-                  href="#brief"
-                  className="inline-flex items-center justify-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-800 text-sm sm:text-base font-semibold px-5 py-3 rounded-full transition-all text-center"
-                >
-                  Explore Blueprint
-                </a>
               </div>
             </div>
 
