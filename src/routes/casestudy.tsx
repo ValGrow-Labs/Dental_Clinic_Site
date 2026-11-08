@@ -4,37 +4,21 @@ import {
   Sparkles,
   ArrowRight,
   ExternalLink,
-  Shield,
   Award,
   Smartphone,
-  Zap,
-  CheckCircle2,
   AlertCircle,
-  Layers,
-  Code2,
   TrendingUp,
   MessageCircle,
   Play,
   Pause,
   Clock,
-  Check,
+  ArrowUp,
+  CheckCircle2,
 } from "lucide-react";
 
 export const Route = createFileRoute("/casestudy")({
   component: CaseStudyPage,
 });
-
-/* -------------------------------------------------------------------------
-   COLOR PALETTE (DENTAL CLINIC IDENTITY)
-------------------------------------------------------------------------- */
-const PALETTE = [
-  { name: "Deep Ocean", hex: "#0F6E8C", role: "Primary Brand", light: false },
-  { name: "Vibrant Cyan", hex: "#2EAED6", role: "Primary Action", light: false },
-  { name: "Sky Accent", hex: "#39A9DB", role: "Secondary Glow", light: true },
-  { name: "Clinical Surface", hex: "#F8FBFD", role: "Canvas Background", light: true },
-  { name: "Contrast Ink", hex: "#0F172A", role: "Headings & Text", light: false },
-  { name: "Pure White", hex: "#FFFFFF", role: "Card Containers", light: true },
-];
 
 /* -------------------------------------------------------------------------
    VALGROW LABS LOGO COMPONENTS (RESPONSIVE RWD)
@@ -85,7 +69,6 @@ function ValGrowLogoDark() {
    MAIN CASE STUDY PAGE (FULL MOBILE RWD FORMAT)
 ------------------------------------------------------------------------- */
 function CaseStudyPage() {
-  const [copiedColor, setCopiedColor] = useState<string | null>(null);
   const [isPlayingVideo, setIsPlayingVideo] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -95,12 +78,6 @@ function CaseStudyPage() {
       document.title = "Bin Arab Dental Centre — Leading Dental Clinic in Dubai";
     };
   }, []);
-
-  const copyToClipboard = (text: string) => {
-    navigator.clipboard.writeText(text);
-    setCopiedColor(text);
-    setTimeout(() => setCopiedColor(null), 2000);
-  };
 
   const toggleVideoPlay = () => {
     if (videoRef.current) {
@@ -112,6 +89,10 @@ function CaseStudyPage() {
         setIsPlayingVideo(false);
       }
     }
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -454,9 +435,9 @@ function CaseStudyPage() {
       </section>
 
       {/* ===================================================================
-          05 – INFORMATION ARCHITECTURE (RWD RESPONSIVE ROUTE GRID)
+          04 – INFORMATION ARCHITECTURE (RWD RESPONSIVE ROUTE GRID)
       =================================================================== */}
-      <section className="py-7 sm:py-10 bg-[#F8FBFD] border-b border-slate-200/80">
+      <section id="architecture" className="py-7 sm:py-10 bg-[#F8FBFD] border-b border-slate-200/80">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <span className="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-[#0F6E8C] block mb-1">
             04 · Architecture
@@ -518,152 +499,12 @@ function CaseStudyPage() {
       </section>
 
       {/* ===================================================================
-          06 – UI/UX DESIGN SYSTEM (RESPONSIVE COLOR GRID & LIVING TOKENS)
-      =================================================================== */}
-      <section id="system" className="py-7 sm:py-10 bg-white border-b border-slate-200/80">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <span className="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-[#0F6E8C] block mb-1">
-            05 · Design System
-          </span>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-slate-900 mb-2">
-            Calibrated Color & Token System
-          </h2>
-          <p className="text-sm sm:text-base lg:text-lg text-slate-700 font-medium max-w-2xl mb-4">
-            Engineered by ValGrow Labs to reflect clinical calm and luxury aesthetic balance:
-          </p>
-
-          {/* Color palette: 2 cols on mobile, 3 on tablet, 6 on desktop */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5 sm:gap-3.5 mb-4">
-            {PALETTE.map((c) => (
-              <div
-                key={c.name}
-                onClick={() => copyToClipboard(c.hex)}
-                className="p-3 sm:p-3.5 rounded-xl bg-[#F8FBFD] border border-slate-200 hover:shadow-xs cursor-pointer transition-all"
-              >
-                <div
-                  className="h-12 sm:h-16 rounded-lg mb-2 flex items-center justify-center text-xs sm:text-sm font-mono font-black shadow-inner"
-                  style={{ backgroundColor: c.hex }}
-                >
-                  <span className={c.light ? "text-slate-900" : "text-white"}>
-                    {copiedColor === c.hex ? "Copied!" : c.hex}
-                  </span>
-                </div>
-                <p className="font-heading font-bold text-xs sm:text-base text-slate-900">{c.name}</p>
-                <p className="text-[10px] sm:text-xs font-bold text-[#0F6E8C] mt-0.5">{c.role}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5 sm:gap-4">
-            <div className="p-4 sm:p-5 rounded-2xl bg-[#F8FBFD] border border-slate-200">
-              <span className="text-xs sm:text-sm uppercase font-extrabold text-slate-500">Typography Pairing</span>
-              <div className="mt-2.5 sm:mt-3 space-y-2.5 sm:space-y-3">
-                <div>
-                  <span className="text-xs sm:text-sm font-mono font-bold text-[#0F6E8C]">Headings · Poppins SemiBold</span>
-                  <p className="font-heading font-bold text-lg sm:text-2xl text-slate-900 mt-0.5">
-                    Experience Comprehensive Dental Care
-                  </p>
-                </div>
-                <div>
-                  <span className="text-xs sm:text-sm font-mono font-bold text-[#0F6E8C]">Body · Inter Regular</span>
-                  <p className="text-xs sm:text-base text-slate-700 leading-relaxed mt-0.5">
-                    Clear optical legibility on mobile devices, with generous line height and properly calibrated letter spacing.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="p-4 sm:p-5 rounded-2xl bg-slate-900 text-white flex flex-col justify-between">
-              <div>
-                <span className="text-xs sm:text-sm uppercase font-extrabold text-[#2EAED6]">Living Tokens</span>
-                <p className="text-xs sm:text-sm text-slate-200 mt-1 mb-3">Core reusable interface elements</p>
-              </div>
-              <div className="flex flex-wrap items-center gap-2 sm:gap-3">
-                <button className="bg-[#2EAED6] text-white text-xs sm:text-sm font-bold px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full shadow-[0_4px_14px_rgba(46,174,214,0.3)]">
-                  .btn-primary
-                </button>
-                <button className="bg-white/10 border border-white/20 text-white text-xs sm:text-sm font-bold px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full">
-                  .btn-ghost
-                </button>
-                <div className="flex items-center gap-1.5 bg-[#25D366] text-white text-xs sm:text-sm font-bold px-3 sm:px-4 py-2 rounded-full">
-                  <MessageCircle className="w-3.5 h-3.5 fill-current" /> WhatsApp
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ===================================================================
-          07 – TECHNOLOGY STACK & PERFORMANCE
-      =================================================================== */}
-      <section id="stack" className="py-7 sm:py-10 bg-[#F8FBFD] border-b border-slate-200/80">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <span className="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-[#0F6E8C] block mb-1">
-            06 · Engineering
-          </span>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-slate-900 mb-2">
-            Technology Stack & Speed
-          </h2>
-          <p className="text-sm sm:text-base lg:text-lg text-slate-700 font-medium max-w-2xl mb-4">
-            Selected for instantaneous loading, strict type safety, and minimal bundle sizes:
-          </p>
-
-          {/* Tech cards: 2 cols on mobile, 4 on desktop */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3.5 mb-4">
-            <div className="group p-3.5 sm:p-4 rounded-xl bg-white hover:bg-[#0F6E8C] border border-slate-200 hover:border-[#0F6E8C] transition-all duration-300 cursor-pointer shadow-xs hover:shadow-md">
-              <Zap className="w-5 h-5 sm:w-6 sm:h-6 text-amber-500 group-hover:text-amber-300 mb-1 transition-colors" />
-              <p className="font-heading font-bold text-sm sm:text-lg text-slate-900 group-hover:text-white transition-colors">
-                Vite 8
-              </p>
-              <p className="text-xs sm:text-sm text-slate-700 group-hover:text-white/95 mt-0.5 transition-colors">
-                Sub second HMR
-              </p>
-            </div>
-            <div className="group p-3.5 sm:p-4 rounded-xl bg-white hover:bg-[#0F6E8C] border border-slate-200 hover:border-[#0F6E8C] transition-all duration-300 cursor-pointer shadow-xs hover:shadow-md">
-              <Code2 className="w-5 h-5 sm:w-6 sm:h-6 text-blue-500 group-hover:text-cyan-300 mb-1 transition-colors" />
-              <p className="font-heading font-bold text-sm sm:text-lg text-slate-900 group-hover:text-white transition-colors">
-                React 19
-              </p>
-              <p className="text-xs sm:text-sm text-slate-700 group-hover:text-white/95 mt-0.5 transition-colors">
-                Concurrent UI
-              </p>
-            </div>
-            <div className="group p-3.5 sm:p-4 rounded-xl bg-white hover:bg-[#0F6E8C] border border-slate-200 hover:border-[#0F6E8C] transition-all duration-300 cursor-pointer shadow-xs hover:shadow-md">
-              <Shield className="w-5 h-5 sm:w-6 sm:h-6 text-indigo-500 group-hover:text-indigo-200 mb-1 transition-colors" />
-              <p className="font-heading font-bold text-sm sm:text-lg text-slate-900 group-hover:text-white transition-colors">
-                TypeScript 5.8
-              </p>
-              <p className="text-xs sm:text-sm text-slate-700 group-hover:text-white/95 mt-0.5 transition-colors">
-                Strict type safety
-              </p>
-            </div>
-            <div className="group p-3.5 sm:p-4 rounded-xl bg-white hover:bg-[#0F6E8C] border border-slate-200 hover:border-[#0F6E8C] transition-all duration-300 cursor-pointer shadow-xs hover:shadow-md">
-              <Layers className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-500 group-hover:text-emerald-300 mb-1 transition-colors" />
-              <p className="font-heading font-bold text-sm sm:text-lg text-slate-900 group-hover:text-white transition-colors">
-                TanStack Router
-              </p>
-              <p className="text-xs sm:text-sm text-slate-700 group-hover:text-white/95 mt-0.5 transition-colors">
-                Type safe routes
-              </p>
-            </div>
-          </div>
-
-          <div className="p-3.5 sm:p-4 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm lg:text-base text-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-3 font-semibold shadow-xs">
-            <span className="flex items-center gap-1.5">✓ Native lazy loading on all doctor images</span>
-            <span className="flex items-center gap-1.5">✓ WebM compressed hero video</span>
-            <span className="flex items-center gap-1.5">✓ Zero Cumulative Layout Shift (CLS &lt; 0.05)</span>
-          </div>
-        </div>
-      </section>
-
-      {/* ===================================================================
-          08 – CONVERSION STRATEGY & PATIENT FUNNEL
+          05 – CONVERSION STRATEGY & PATIENT FUNNEL
       =================================================================== */}
       <section id="funnel" className="py-7 sm:py-10 bg-white border-b border-slate-200/80">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <span className="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-[#0F6E8C] block mb-1">
-            07 · Conversion
+            05 · Conversion
           </span>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-slate-900 mb-2">
             Patient Journey & Conversion Funnel
@@ -729,118 +570,220 @@ function CaseStudyPage() {
       </section>
 
       {/* ===================================================================
-          09 – PRE-FOOTER CALL TO ACTION (MATCHING VALGROW LABS CARD)
+          06 – PRE-FOOTER CALL TO ACTION (MODERN STUDIO CARD)
       =================================================================== */}
-      <section className="py-7 sm:py-10 bg-white">
+      <section className="py-8 sm:py-12 bg-gradient-to-b from-white to-[#F8FBFD] border-b border-slate-200/80">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="p-5 sm:p-8 rounded-2xl bg-white border border-slate-200 shadow-md flex flex-col lg:flex-row lg:items-center justify-between gap-5 sm:gap-6">
-            <div className="flex items-center gap-3.5 sm:gap-5">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-[#F8FBFD] border border-slate-200 p-2 flex items-center justify-center shrink-0 shadow-xs">
-                <img src="/images/valgrow-logo.jpg" alt="ValGrow Labs" className="w-full h-full object-contain" />
+          <div className="relative rounded-3xl bg-gradient-to-br from-[#0F172A] via-[#0B1E33] to-[#0A1120] text-white p-6 sm:p-10 shadow-xl border border-white/10 overflow-hidden">
+            {/* Ambient cyan backdrop glow */}
+            <div className="absolute top-0 right-0 w-96 h-96 bg-[#2EAED6]/15 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#0F6E8C]/20 rounded-full blur-2xl pointer-events-none" />
+
+            <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6 sm:gap-8">
+              <div className="flex items-start sm:items-center gap-4 sm:gap-5">
+                <div className="w-13 h-13 sm:w-16 sm:h-16 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 p-2 flex items-center justify-center shrink-0 shadow-inner">
+                  <img
+                    src="/images/valgrow-logo.jpg"
+                    alt="ValGrow Labs"
+                    className="w-full h-full object-contain rounded-xl"
+                  />
+                </div>
+                <div>
+                  <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-[#2EAED6]/15 border border-[#2EAED6]/30 text-[#2EAED6] text-[10px] sm:text-xs font-mono uppercase tracking-widest font-bold mb-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#2EAED6] animate-pulse" />
+                    ENGINEERING STUDIO · PARTNERSHIP
+                  </div>
+                  <h2 className="text-xl sm:text-2xl lg:text-3xl font-heading font-black text-white tracking-tight">
+                    Ready to build your next digital platform?
+                  </h2>
+                  <p className="text-xs sm:text-sm lg:text-base text-slate-300 mt-1 max-w-xl leading-relaxed">
+                    ValGrow Labs work with ambitious brands to build scalable, high-converting digital products.
+                  </p>
+                </div>
               </div>
-              <div>
-                <h2 className="text-lg sm:text-xl lg:text-2xl font-heading font-bold text-slate-900">
-                  Ready to build your next digital platform?
-                </h2>
-                <p className="text-xs sm:text-sm lg:text-base text-slate-600 mt-0.5 sm:mt-1 max-w-xl">
-                  ValGrow Labs work with ambitious brands to build scalable, high-converting digital products.
-                </p>
+
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 shrink-0 w-full lg:w-auto">
+                <a
+                  href="mailto:contact@valgrowlabs.com"
+                  className="inline-flex items-center justify-center gap-2 bg-[#2EAED6] hover:bg-[#249CC0] text-white text-xs sm:text-sm font-bold px-6 py-3 rounded-full shadow-[0_4px_16px_rgba(46,174,214,0.35)] transition-all hover:scale-[1.02] active:scale-[0.98] text-center"
+                >
+                  <span>Start a Project Inquiry</span>
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+                <Link
+                  to="/"
+                  className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/15 text-white text-xs sm:text-sm font-bold px-5 py-3 rounded-full border border-white/15 transition-all text-center"
+                >
+                  <Sparkles className="w-4 h-4 text-[#2EAED6]" />
+                  <span>Interactive Clinic Demo</span>
+                </Link>
               </div>
-            </div>
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 shrink-0 w-full lg:w-auto">
-              <a
-                href="mailto:contact@valgrowlabs.com"
-                className="inline-flex items-center justify-center gap-2 bg-[#0F172A] hover:bg-slate-800 text-white text-xs sm:text-sm font-bold px-5 sm:px-6 py-2.5 sm:py-3 rounded-full shadow-sm transition-all text-center"
-              >
-                <span>Start a Project Inquiry</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </a>
-              <Link
-                to="/"
-                className="inline-flex items-center justify-center gap-2 bg-[#2EAED6] hover:bg-[#249CC0] text-white text-xs sm:text-sm font-bold px-5 sm:px-6 py-2.5 sm:py-3 rounded-full transition-all shadow-[0_4px_14px_rgba(46,174,214,0.3)] text-center"
-              >
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>Interactive Clinic Demo</span>
-              </Link>
             </div>
           </div>
         </div>
       </section>
 
       {/* ===================================================================
-          10 – VALGROW LABS AGENCY FOOTER
+          07 – VALGROW LABS AGENCY FOOTER (MODERN 2026 STUDIO DESIGN)
       =================================================================== */}
-      <footer className="bg-[#0F172A] text-white pt-8 sm:pt-10 pb-8 border-t border-slate-800">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-8 mb-6">
-          <div className="md:col-span-5 space-y-3">
-            <ValGrowLogoDark />
-            <p className="text-xs sm:text-sm lg:text-base text-slate-300 leading-relaxed max-w-sm">
-              We design and engineer custom software platforms, high converting digital storefronts and intelligent operations systems for progressive businesses.
-            </p>
-            <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold text-emerald-400">
-              <span className="w-2.5 h-2.5 rounded-full bg-emerald-400" />
-              <span>Designed & Engineered by ValGrow Labs</span>
-            </div>
-          </div>
+      <footer className="relative bg-[#080D1A] text-white pt-12 sm:pt-16 pb-8 border-t border-slate-800/80 overflow-hidden">
+        {/* Subtle top ambient accent line */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-[#2EAED6]/40 to-transparent pointer-events-none" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-20 bg-[#2EAED6]/10 blur-3xl pointer-events-none" />
 
-          <div className="md:col-span-3 space-y-2">
-            <h4 className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#2EAED6]">
-              CASE STUDY SECTIONS
-            </h4>
-            <ul className="space-y-1.5 text-xs sm:text-sm lg:text-base text-slate-200">
-              <li><a href="#brief" className="hover:text-white transition">The Brief & Challenges</a></li>
-              <li><a href="#strategy" className="hover:text-white transition">Engineering Blueprint</a></li>
-              <li><a href="#system" className="hover:text-white transition">UI/UX Design System</a></li>
-              <li><a href="#stack" className="hover:text-white transition">Technology & Stack</a></li>
-              <li><a href="#funnel" className="hover:text-white transition">Business Impact & Funnel</a></li>
-            </ul>
-          </div>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 pb-10 border-b border-slate-800/80">
+            {/* Left: Studio Identity & Description */}
+            <div className="lg:col-span-5 space-y-4">
+              <ValGrowLogoDark />
 
-          <div className="md:col-span-4 space-y-2">
-            <h4 className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#2EAED6]">
-              CLIENT & PROJECT METADATA
-            </h4>
-            <div className="space-y-1.5 text-xs sm:text-sm text-slate-200">
-              <div className="flex justify-between py-1 border-b border-slate-800">
-                <span className="text-slate-400">Client:</span>
-                <span className="font-semibold text-white">Bin Arab Dental Centre</span>
+              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-md font-normal">
+                We design and engineer custom software platforms, high converting digital storefronts and intelligent operations systems for progressive businesses.
+              </p>
+
+              <div className="flex flex-wrap items-center gap-2 pt-1">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 text-xs font-semibold">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+                  </span>
+                  <span>Designed & Engineered by ValGrow Labs</span>
+                </div>
               </div>
-              <div className="flex justify-between py-1 border-b border-slate-800">
-                <span className="text-slate-400">Deliverable:</span>
-                <span className="font-semibold text-white">Luxury Redesign & Web Platform</span>
-              </div>
-              <div className="flex justify-between py-1 border-b border-slate-800">
-                <span className="text-slate-400">Agency:</span>
-                <span className="font-bold text-[#2EAED6]">ValGrow Labs</span>
-              </div>
-              <div className="flex justify-between py-1 border-b border-slate-800">
-                <span className="text-slate-400">Year:</span>
-                <span className="font-semibold text-white">2026 Production</span>
+
+              <div className="pt-1">
+                <a
+                  href="mailto:contact@valgrowlabs.com"
+                  className="inline-flex items-center gap-2 text-xs sm:text-sm text-slate-400 hover:text-white transition group"
+                >
+                  <span className="w-7 h-7 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-[#2EAED6] group-hover:bg-[#2EAED6] group-hover:text-white transition">
+                    ✉
+                  </span>
+                  <span className="font-mono">contact@valgrowlabs.com</span>
+                </a>
               </div>
             </div>
 
-            <div className="pt-2 space-y-2">
-              <Link
-                to="/"
-                className="w-full inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white text-xs sm:text-sm font-bold py-2.5 sm:py-3 px-4 rounded-xl transition border border-white/10 text-center"
-              >
-                <span>Visit Bin Arab Dental Live</span>
-                <ExternalLink className="w-3.5 h-3.5" />
-              </Link>
-              <Link
-                to="/"
-                className="w-full inline-flex items-center justify-center gap-2 bg-[#2EAED6] hover:bg-[#249CC0] text-white text-xs sm:text-sm font-bold py-2.5 sm:py-3 px-4 rounded-xl transition shadow-md shadow-[#2EAED6]/20 text-center"
-              >
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>Launch Interactive Clinic Prototype</span>
-              </Link>
+            {/* Center: Case Study Navigation */}
+            <div className="lg:col-span-3 space-y-3">
+              <h4 className="text-[11px] font-mono font-bold uppercase tracking-widest text-[#2EAED6]">
+                CASE STUDY SECTIONS
+              </h4>
+              <ul className="space-y-1.5 text-xs sm:text-sm text-slate-300">
+                <li>
+                  <a
+                    href="#brief"
+                    className="group flex items-center justify-between py-1.5 px-2.5 rounded-lg hover:bg-white/5 transition"
+                  >
+                    <span className="group-hover:text-white transition">01 · Brief & Founder Scope</span>
+                    <span className="text-slate-500 group-hover:text-[#2EAED6] group-hover:translate-x-0.5 transition-transform text-xs">→</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#brief"
+                    className="group flex items-center justify-between py-1.5 px-2.5 rounded-lg hover:bg-white/5 transition"
+                  >
+                    <span className="group-hover:text-white transition">02 · Core Business Challenges</span>
+                    <span className="text-slate-500 group-hover:text-[#2EAED6] group-hover:translate-x-0.5 transition-transform text-xs">→</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#strategy"
+                    className="group flex items-center justify-between py-1.5 px-2.5 rounded-lg hover:bg-white/5 transition"
+                  >
+                    <span className="group-hover:text-white transition">03 · Strategic Improvements</span>
+                    <span className="text-slate-500 group-hover:text-[#2EAED6] group-hover:translate-x-0.5 transition-transform text-xs">→</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#architecture"
+                    className="group flex items-center justify-between py-1.5 px-2.5 rounded-lg hover:bg-white/5 transition"
+                  >
+                    <span className="group-hover:text-white transition">04 · Information Architecture</span>
+                    <span className="text-slate-500 group-hover:text-[#2EAED6] group-hover:translate-x-0.5 transition-transform text-xs">→</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#funnel"
+                    className="group flex items-center justify-between py-1.5 px-2.5 rounded-lg hover:bg-white/5 transition"
+                  >
+                    <span className="group-hover:text-white transition">05 · Conversion Pipeline</span>
+                    <span className="text-slate-500 group-hover:text-[#2EAED6] group-hover:translate-x-0.5 transition-transform text-xs">→</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Right: Modern Project Capsule Card */}
+            <div className="lg:col-span-4">
+              <div className="rounded-2xl bg-white/[0.04] backdrop-blur-md border border-white/10 p-4 sm:p-5 shadow-lg space-y-4">
+                <div className="flex items-center justify-between pb-3 border-b border-white/10">
+                  <span className="text-[11px] font-mono uppercase tracking-widest text-[#2EAED6] font-bold">
+                    PROJECT METADATA
+                  </span>
+                  <span className="text-[11px] px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 font-semibold flex items-center gap-1">
+                    <CheckCircle2 className="w-3 h-3" /> Live
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-2 gap-3 text-xs">
+                  <div>
+                    <span className="text-slate-400 block text-[10px] uppercase tracking-wider font-semibold">Client</span>
+                    <span className="text-white font-bold text-xs sm:text-sm block mt-0.5">Bin Arab Dental</span>
+                    <span className="text-slate-400 text-[11px]">Dubai, UAE</span>
+                  </div>
+                  <div>
+                    <span className="text-slate-400 block text-[10px] uppercase tracking-wider font-semibold">Deliverable</span>
+                    <span className="text-white font-bold text-xs sm:text-sm block mt-0.5">Luxury Healthcare</span>
+                    <span className="text-slate-400 text-[11px]">Web Platform & Funnel</span>
+                  </div>
+                  <div>
+                    <span className="text-slate-400 block text-[10px] uppercase tracking-wider font-semibold">Agency</span>
+                    <span className="text-[#2EAED6] font-bold text-xs sm:text-sm block mt-0.5">ValGrow Labs</span>
+                    <span className="text-slate-400 text-[11px]">Engineering Studio</span>
+                  </div>
+                  <div>
+                    <span className="text-slate-400 block text-[10px] uppercase tracking-wider font-semibold">Year</span>
+                    <span className="text-white font-bold text-xs sm:text-sm block mt-0.5">2026 Production</span>
+                    <span className="text-slate-400 text-[11px]">High-Performance</span>
+                  </div>
+                </div>
+
+                <div className="pt-1 space-y-2">
+                  <Link
+                    to="/"
+                    className="w-full inline-flex items-center justify-center gap-2 bg-[#2EAED6] hover:bg-[#249CC0] text-white text-xs sm:text-sm font-bold py-2.5 px-4 rounded-xl shadow-md shadow-[#2EAED6]/20 transition-all hover:scale-[1.01] active:scale-[0.99] text-center"
+                  >
+                    <span>Visit Bin Arab Dental Live</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </Link>
+                  <Link
+                    to="/"
+                    className="w-full inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/15 text-white text-xs sm:text-sm font-bold py-2.5 px-4 rounded-xl border border-white/10 transition-all text-center"
+                  >
+                    <Sparkles className="w-3.5 h-3.5 text-[#2EAED6]" />
+                    <span>Launch Interactive Clinic Prototype</span>
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-5 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-2.5 text-xs sm:text-sm text-slate-400 text-center sm:text-left">
-          <p>© {new Date().getFullYear()} ValGrow Labs. All rights reserved.</p>
-          <p>Bin Arab Dental Centre Website Redesign · Case Study</p>
+          {/* Bottom copyright & back to top */}
+          <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-400 text-center sm:text-left">
+            <p>© {new Date().getFullYear()} ValGrow Labs. All rights reserved. · Bin Arab Dental Centre Website Redesign · Case Study</p>
+            <button
+              onClick={scrollToTop}
+              className="inline-flex items-center gap-1.5 text-xs text-slate-400 hover:text-white transition py-1 px-2.5 rounded-lg hover:bg-white/5 cursor-pointer"
+            >
+              <span>Back to top</span>
+              <ArrowUp className="w-3.5 h-3.5" />
+            </button>
+          </div>
         </div>
       </footer>
     </div>
